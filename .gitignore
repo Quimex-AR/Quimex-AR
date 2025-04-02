@@ -37,7 +37,7 @@ ExportedObj/
 *.sln
 *.suo
 *.tmp
-*.utmp
+*.utmp/
 *.user
 *.userprefs
 *.pidb
