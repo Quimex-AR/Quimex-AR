@@ -68,6 +68,62 @@ crashlytics-build.properties
 # Packed Addressables
 /[Aa]ssets/[Aa]ddressable[Aa]ssets[Dd]ata/*/*.bin*
 
+# Unity generated files
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Bb]uild/
+[Bb]uilds/
+[Ll]ogs/
+[Mm]emoryCaptures/
+UserSettings/
+
+# Unity metadata
+*.pidb
+*.suo
+*.user
+*.userprefs
+*.csproj
+*.unityproj
+*.sln
+*.tmp
+*.svd
+*.pdb
+*.opendb
+*.VC.db
+
+# Vuforia specific files
+Assets/StreamingAssets/Vuforia/
+Assets/Vuforia/
+
+# Exclude auto-generated and cached files
+.vscode/
+.idea/
+*.apk
+*.unitypackage
+*.asset
+*.db
+*.tlog
+*.ilk
+*.ipch
+*.pdb
+*.obj
+*.sdf
+
+# Ignore PlayMode and Editor logs
+PlayModeTests/
+Logs/
+
+# Exclude environment-specific configuration
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# Rider project files
+.idea/
+*.iml
+*.iws
 # Temporary auto-generated Android Assets
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
