@@ -1,7 +1,4 @@
-# This .gitignore file should be placed at the root of your Unity project directory
-#
-# Get latest from https://github.com/github/gitignore/blob/main/Unity.gitignore
-#
+# ========== Unity generated folders ==========
 /[Ll]ibrary/
 /[Tt]emp/
 /[Oo]bj/
@@ -9,6 +6,26 @@
 /[Bb]uilds/
 /[Ll]ogs/
 /[Uu]ser[Ss]ettings/
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Bb]uild/
+[Bb]uilds/
+[Ll]ogs/
+
+# ========== Visual Studio / Rider / MonoDevelop ==========
+.vscode/
+*.csproj
+*.sln
+*.user
+*.unityproj
+*.pidb
+*.suo
+
+# ========== OS / Editor / Cache junk ==========
+.DS_Store
+*.swp
+*.tmp
 
 # MemoryCaptures can get excessive in size.
 # They also could contain extremely sensitive data
@@ -128,3 +145,111 @@ Thumbs.db
 # Temporary auto-generated Android Assets
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
+
+
+# From unity repository file: ignore.conf
+
+**/QCAR/*
+QCAR
+**/Library/
+Library/
+Library
+library
+Temp
+temp
+Obj
+obj
+Build
+build
+Builds
+builds
+UserSettings
+usersettings
+MemoryCaptures
+memorycaptures
+Logs
+logs
+**/Assets/AssetStoreTools
+**/assets/assetstoretools
+/Assets/Plugins/PlasticSCM*
+/assets/plugins/PlasticSCM*
+*.private
+*.private.meta
+^*.private.[0-9]+$
+^*.private.[0-9]+.meta$
+.vs
+.vscode
+.idea
+.gradle
+ExportedObj
+.consulo
+*.csproj
+*.unityproj
+*.sln
+*.suo
+*.tmp
+*.utmp
+*.user
+*.userprefs
+*.pidb
+*.booproj
+*.svd
+*.pdb
+*.mdb
+*.opendb
+*.VC.db
+*.pidb.meta
+*.pdb.meta
+*.mdb.meta
+sysinfo.txt
+crashlytics-build.properties
+*.apk
+*.aab
+*.app
+*.unitypackage
+~UnityDirMonSyncFile~*
+**/Assets/AddressableAssetsData/*/*.bin*
+**/assets/addressableassetsdata/*/*.bin*
+**/Assets/StreamingAssets/aa.meta
+**/assets/streamingassets/*/aa/*
+.DS_Store*
+Thumbs.db
+Desktop.ini
+
+
+# ========== Other Directories ==========
+bohrAR_BurstDebugInformation_DoNotShip/
+MemoryCaptures/
+.crash/
+*.apk
+*.aab
+
+
+# Auto-generated folders
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Bb]uild/
+[Bb]uilds/
+[Ll]ogs/
+
+# Unity Burst Compiler Debug
+bohrAR_BurstDebugInformation_DoNotShip/
+
+# Cache / crash / temporary
+MemoryCaptures/
+.crash/
+*.tmp
+
+# IDE/Editor specific
+.vscode/
+*.csproj
+*.sln
+*.user
+*.pidb
+*.suo
+
+# OS
+.DS_Store
+Thumbs.db
+
