@@ -292,7 +292,7 @@ Light:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 410087039}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 11
   m_Type: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -524,10 +524,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2476604762465149461, guid: 01618a1617da58e899b1e597b9f56a88, type: 3}
-      propertyPath: requiredTapCount
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4497849833844540481, guid: 01618a1617da58e899b1e597b9f56a88, type: 3}
       propertyPath: m_LocalPosition.x
       value: 962.8308
@@ -567,6 +563,10 @@ PrefabInstance:
     - target: {fileID: 4497849833844540481, guid: 01618a1617da58e899b1e597b9f56a88, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5905798360451270123, guid: 01618a1617da58e899b1e597b9f56a88, type: 3}
+      propertyPath: m_AdditionalShaderChannelsFlag
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 7362343666034466560, guid: 01618a1617da58e899b1e597b9f56a88, type: 3}
       propertyPath: m_Name

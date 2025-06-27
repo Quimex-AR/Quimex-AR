@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "712119130441",
+    "project_id": "quimex-ar",
+    "storage_bucket": "quimex-ar.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:712119130441:android:abc13347efffafe4c72298",
+        "android_client_info": {
+          "package_name": "udc.quimex.ar"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCmBQFFv09qhWxI_cgNPNjzUssK6ase-Yw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

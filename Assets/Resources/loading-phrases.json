@@ -1,0 +1,30 @@
+{
+  "categories": {
+    "scientific": [
+      "John Dalton propuso que toda la materia está hecha de átomos indivisibles.",
+      "J.J. Thomson descubrió el electrón usando un tubo de rayos catódicos.",
+      "Rutherford demostró que el átomo tiene un núcleo denso en su centro.",
+      "El modelo de Bohr explica los niveles de energía de los electrones.",
+      "Schrödinger propuso que los electrones se comportan como ondas en una nube.",
+      "El modelo atómico ha evolucionado con cada nuevo descubrimiento.",
+      "Aunque no los veas, los átomos están en todo lo que te rodea.",
+      "Los modelos atómicos no son la verdad absoluta, sino aproximaciones cada vez más precisas."
+    ],
+    "curious": [
+      "Si un átomo fuera del tamaño de un estadio, su núcleo sería como una canica.",
+      "Los átomos están compuestos en su mayor parte... de espacio vacío.",
+      "Tu cuerpo contiene billones de átomos que alguna vez formaron parte de estrellas.",
+      "Cada segundo, millones de átomos pasan a través de tu cuerpo.",
+      "El oro, el oxígeno y el carbono son diferentes solo por su estructura atómica.",
+      "Los átomos no tienen color, pero juntos crean todo lo que vemos."
+    ],
+    "motivational": [
+      "Aprender ciencia es entender el universo, átomo por átomo.",
+      "La curiosidad es el primer paso hacia el conocimiento.",
+      "Explorar el mundo atómico es descubrir lo invisible.",
+      "No hay ciencia sin preguntas: ¡sigue cuestionándolo todo!",
+      "Detrás de cada modelo atómico hay una historia de descubrimiento.",
+      "Los científicos también se equivocan: así avanza la ciencia."
+    ]
+  }
+}
