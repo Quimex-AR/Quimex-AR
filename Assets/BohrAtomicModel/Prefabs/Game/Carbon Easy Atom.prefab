@@ -1,0 +1,79 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6644478534732134421
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5718959054109504516}
+  - component: {fileID: 7639763999047173028}
+  - component: {fileID: 7128630086357233734}
+  m_Layer: 0
+  m_Name: Carbon Easy Atom
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5718959054109504516
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6644478534732134421}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 3.75, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
+--- !u!114 &7639763999047173028
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6644478534732134421}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29a6f09687ec5eb27a97fd7312c602fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  electronPrefab: {fileID: 4063403102321734610, guid: 735bb44f1b4b9efdb8c6fe9e5f1dacfa, type: 3}
+  protonPrefab: {fileID: 5659226173162963898, guid: 875faf6747508a61caaae4dc054f354a, type: 3}
+  neutronPrefab: {fileID: 8445367917757964231, guid: b912c33409af1514fa8bba5063ec03da, type: 3}
+  electronScale: {x: 0.7, y: 0.7, z: 0.05}
+  protonScale: {x: 0.55, y: 0.55, z: 0.05}
+  neutronScale: {x: 0.55, y: 0.55, z: 0.05}
+  nucleusRadius: 0.55
+  protonCount: 6
+  neutronCount: 6
+  electronShells: 0200000004000000
+  shellDistance: 0.8
+  firstShellMultiplier: 1.95
+  shellCircleSegments: 100
+  shellMaterial: {fileID: 2100000, guid: 83cd8f2e6d390bd4399364125faa223d, type: 2}
+  shellColor: {r: 1, g: 1, b: 1, a: 1}
+  shellLineWidth: 0.02
+  suctionDistance: 0.27
+  detachDistanceThreshold: 0.27
+  snapRadius: 0.22
+--- !u!114 &7128630086357233734
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6644478534732134421}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fba3059135bf77c288ddd293a12e2d0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gravityActivationDelay: 3

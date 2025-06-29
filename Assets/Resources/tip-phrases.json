@@ -1,0 +1,60 @@
+{
+  "tips": [
+    {
+      "type": "tip",
+      "text": "Puedes mover los electrones incluso después de que estén colocados en una órbita. ¡Experimenta libremente!"
+    },
+    {
+      "type": "tip",
+      "text": "No hay una única forma correcta de colocar los electrones. Lo importante es entender los niveles de energía."
+    },
+    {
+      "type": "info",
+      "text": "Los electrones no giran en círculos perfectos; los modelos son simplificaciones para entender su comportamiento."
+    },
+    {
+      "type": "fact",
+      "text": "El modelo de Bohr fue el primero en proponer niveles de energía cuantizados para los electrones."
+    },
+    {
+      "type": "fact",
+      "text": "Cada capa electrónica tiene un límite de electrones: 2 en la primera, 8 en la segunda, 18 en la tercera..."
+    },
+    {
+      "type": "info",
+      "text": "Este modelo no busca que memorices, sino que explores cómo los electrones se distribuyen alrededor del núcleo."
+    },
+    {
+      "type": "tip",
+      "text": "Si un electrón se resiste a salir de una órbita, intenta jalarlo con más fuerza para moverlo a otra capa."
+    },
+    {
+      "type": "fact",
+      "text": "El núcleo está compuesto por protones con carga positiva y neutrones sin carga."
+    },
+    {
+      "type": "info",
+      "text": "Los electrones tienen carga negativa y se sienten atraídos por el núcleo, pero se mantienen a distancia debido a su energía."
+    },
+    {
+      "type": "tip",
+      "text": "La posición exacta de los electrones no se puede saber, por eso usamos modelos como este para entender su energía."
+    },
+    {
+      "type": "fact",
+      "text": "El modelo de Schrödinger reemplazó al de Bohr al introducir la probabilidad en lugar de órbitas fijas."
+    },
+    {
+      "type": "info",
+      "text": "Explora libremente cómo los electrones cambian de capa y reflexiona sobre qué los hace estar en cada nivel."
+    },
+    {
+      "type": "tip",
+      "text": "Puedes usar la observación para deducir cuántos electrones caben en cada capa sin memorizar reglas."
+    },
+    {
+      "type": "fact",
+      "text": "Un átomo es eléctricamente neutro cuando tiene igual número de protones y electrones."
+    }
+  ]
+}

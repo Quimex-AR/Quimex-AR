@@ -1,0 +1,93 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6737181432949578284
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5630497761385968103}
+  - component: {fileID: 5144354293068761155}
+  - component: {fileID: 14821246933886155}
+  - component: {fileID: 4383615498118525016}
+  m_Layer: 0
+  m_Name: Iron Hard Atom
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5630497761385968103
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6737181432949578284}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 3.75, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
+--- !u!114 &5144354293068761155
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6737181432949578284}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29a6f09687ec5eb27a97fd7312c602fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  electronPrefab: {fileID: 4063403102321734610, guid: 735bb44f1b4b9efdb8c6fe9e5f1dacfa, type: 3}
+  protonPrefab: {fileID: 5659226173162963898, guid: 875faf6747508a61caaae4dc054f354a, type: 3}
+  neutronPrefab: {fileID: 8445367917757964231, guid: b912c33409af1514fa8bba5063ec03da, type: 3}
+  electronScale: {x: 0.4, y: 0.4, z: 0.05}
+  protonScale: {x: 0.2, y: 0.2, z: 0.05}
+  neutronScale: {x: 0.2, y: 0.2, z: 0.05}
+  nucleusRadius: 0.4
+  protonCount: 26
+  neutronCount: 30
+  electronShells: 02000000080000000e00000002000000
+  shellDistance: 0.485
+  firstShellMultiplier: 1.585
+  shellCircleSegments: 100
+  shellMaterial: {fileID: 2100000, guid: 83cd8f2e6d390bd4399364125faa223d, type: 2}
+  shellColor: {r: 1, g: 1, b: 1, a: 1}
+  shellLineWidth: 0.02
+  suctionDistance: 0.2
+  detachDistanceThreshold: 0.2
+  snapRadius: 0.16
+--- !u!114 &14821246933886155
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6737181432949578284}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fba3059135bf77c288ddd293a12e2d0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gravityActivationDelay: 3
+--- !u!114 &4383615498118525016
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6737181432949578284}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c5074992d3016c58b7bf62bf3e42585, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slots: []
