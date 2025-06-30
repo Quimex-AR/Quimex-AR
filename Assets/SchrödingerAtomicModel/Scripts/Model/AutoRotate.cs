@@ -13,4 +13,14 @@ public class AutoRotate : MonoBehaviour
             transform.Rotate(rotationAxis, rotationSpeed * Time.deltaTime);
         }
     }
+
+    public void PauseRotation()
+    {
+        isTouching = true;
+    }
+
+    public void ContinueRotation()
+    {
+        isTouching = false;
+    }
 }

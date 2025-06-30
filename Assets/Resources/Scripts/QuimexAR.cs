@@ -83,6 +83,34 @@ public class QuimexAR : MonoBehaviour
                 ToastManager.Instance.ShowToast("Informacion acerca del atomo", 0.3f);
                 break;
             default:
+                if (taps >= 6)
+                {
+                    ToastManager.Instance.ShowToast("Iniciando Juego", 1f);
+                    StartCoroutine(StartGame("MinigameThomson"));
+                }
+                break;
+        }
+    }
+
+    public void SchrodingerGame(int taps)
+    {
+        switch (taps)
+        {
+            case 1:
+                ToastManager.Instance.ShowToast("Apagando Atomo", 0.25f);
+                break;
+            // case 2:
+            //     ToastManager.Instance.ShowToast("Partes del Atomo", 0.25f);
+            //     break;
+            // case 3:
+            //     ToastManager.Instance.ShowToast("Informacion acerca del atomo", 0.3f);
+            //     break;
+            default:
+                if (taps >= 6)
+                {
+                    ToastManager.Instance.ShowToast("Iniciando Juego", 1f);
+                    StartCoroutine(StartGame("MinigameSchrodinger"));
+                }
                 break;
         }
     }
@@ -99,6 +127,5 @@ public class QuimexAR : MonoBehaviour
 
         LoadingScreenController.targetScene = sceneName;
         SceneManager.LoadScene("Loading Scene");
-
     }
 }
