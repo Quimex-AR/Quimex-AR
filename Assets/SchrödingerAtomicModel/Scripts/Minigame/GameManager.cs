@@ -1,15 +1,20 @@
-using UnityEngine;
+锘縰sing UnityEngine;
 using System.Collections;
 
 public class GameManager : MonoBehaviour
 {
     public Transform cloudCenter;
     public float cloudRadius = 1.5f;
+
     public GameObject electronPrefab;
+    public GameObject tapMarkerPrefab; // 馃敡 NUEVO: esfera para marcar el tap del jugador
+
     public Collider cloudCollider;
     public Collider electronCollider;
 
     private GameObject currentElectron;
+    private GameObject currentTapMarker; // 馃敡 NUEVO
+
     private Vector3 electronPosition;
 
     public UIManager uiManager;
@@ -21,65 +26,94 @@ public class GameManager : MonoBehaviour
 
     public void SpawnElectron()
     {
-        // Genera nueva posici髇 aleatoria dentro de la nube
         electronPosition = cloudCenter.position + Random.insideUnitSphere * cloudRadius;
         currentElectron = Instantiate(electronPrefab, electronPosition, Quaternion.identity);
         currentElectron.SetActive(false);
 
-        Debug.Log("Nuevo electr髇 en: " + electronPosition);
+        Debug.Log("Nuevo electr贸n en: " + electronPosition);
     }
 
     public void HandleTap(Vector3 tapPosition)
     {
-        // Desactiva colisi髇 para evitar taps dobles
         DisableCloudCollider();
+
+        // 馃敡 NUEVO: Mostrar marcador donde toc贸 el jugador
+        if (tapMarkerPrefab != null)
+        {
+            // Si ya hay uno, lo destruye antes
+            if (currentTapMarker != null)
+                Destroy(currentTapMarker);
+
+            currentTapMarker = Instantiate(tapMarkerPrefab, tapPosition, Quaternion.identity);
+        }
 
         float distance = Vector3.Distance(tapPosition, electronPosition);
         float maxDistance = cloudRadius;
-
         float accuracy = Mathf.Clamp01(1f - (distance / maxDistance));
         float percentage = accuracy * 100f;
 
-        currentElectron.SetActive(true); // Revelar electr髇
-        uiManager.ShowResult($"Precisi髇: {percentage:F1}%");
-        Debug.Log($"Tap real: {tapPosition} | Electron: {electronPosition} | Distance: {Vector3.Distance(tapPosition, electronPosition)}");
+        currentElectron.SetActive(true); // Mostrar electr贸n
+        HideAllVisuals();
+        uiManager.ShowResult($"Precisi贸n: {percentage:F1}%");
 
+        Debug.Log($"Tap real: {tapPosition} | Electron: {electronPosition} | Distancia: {distance}");
     }
 
     public void RestartGame()
     {
-        // Destruye electr髇 anterior
         if (currentElectron != null)
-        {
             Destroy(currentElectron);
-        }
+
+        // 馃敡 NUEVO: elimina marcador anterior si existe
+        if (currentTapMarker != null)
+            Destroy(currentTapMarker);
+
+        if (orbitalObject != null)
+            orbitalObject.SetActive(true);
 
         uiManager.HideResult();
         SpawnElectron();
-
-        // Espera para evitar tap fantasma
         StartCoroutine(EnableColliderAfterDelay());
     }
 
     private IEnumerator EnableColliderAfterDelay()
     {
-        yield return new WaitForSeconds(0.2f); // evita detecci髇 accidental
+        yield return new WaitForSeconds(0.2f);
         EnableCloudCollider();
     }
 
     public void EnableCloudCollider()
     {
-        if (cloudCollider != null)
-            cloudCollider.enabled = true;
-        if (electronCollider != null)
-            electronCollider.enabled = true;
+        if (cloudCollider != null) cloudCollider.enabled = true;
+        if (electronCollider != null) electronCollider.enabled = true;
     }
 
     public void DisableCloudCollider()
     {
-        if (cloudCollider != null)
-            cloudCollider.enabled = false;
-        if (electronCollider != null)
-            electronCollider.enabled = false;
+        if (cloudCollider != null) cloudCollider.enabled = false;
+        if (electronCollider != null) electronCollider.enabled = false;
     }
+
+    public GameObject orbitalObject; // 馃敡 asigna tu esfera de nube
+
+    public void ShowAllVisuals()
+    {
+        if (currentElectron != null)
+            currentElectron.SetActive(true);
+        if (currentTapMarker != null)
+            currentTapMarker.SetActive(true);
+        if (orbitalObject != null)
+            orbitalObject.SetActive(true);
+    }
+
+    public void HideAllVisuals()
+    {
+        if (currentElectron != null)
+            currentElectron.SetActive(false);
+        if (currentTapMarker != null)
+            currentTapMarker.SetActive(false);
+        if (orbitalObject != null)
+            orbitalObject.SetActive(false);
+    }
+
 }

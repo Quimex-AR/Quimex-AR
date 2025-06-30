@@ -664,14 +664,14 @@ MonoBehaviour:
   PreviewVisible: 1
   RuntimeOcclusion: 0
   RuntimeCollider: 0
-  mTrackableName: Schrodinger
+  mTrackableName: schrodinger
   mInitializedInEditor: 1
   mDataSetPath: Vuforia/Quimex_AR.xml
   mAspectRatio: 1
   mImageTargetType: 3
   mWidth: 0.2
   mHeight: 0.2
-  mRuntimeTexture: {fileID: 2800000, guid: d5dbcb6ab28f94c49ab8645f20d82598, type: 3}
+  mRuntimeTexture: {fileID: 2800000, guid: 6e955e6e7c164c44798551444f4401e5, type: 3}
   mMotionHint: 1
   mTrackingOptimization: 0
   mTrackingOptimizationNeedsUpgrade: 0
@@ -742,7 +742,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mObserverBehaviour: {fileID: 226659530}
   mHiddenRoot: {fileID: 0}
-  mTargetName: Schrodinger
+  mTargetName: schrodinger
   mDatasetName: Vuforia/Quimex_AR.xml
   mCastedBehaviour: {fileID: 226659530}
   mMeshFilter: {fileID: 0}
