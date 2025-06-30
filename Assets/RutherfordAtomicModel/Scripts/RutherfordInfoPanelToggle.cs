@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class RutherfordInfoPanelToggle : MonoBehaviour
@@ -8,10 +9,35 @@ public class RutherfordInfoPanelToggle : MonoBehaviour
     {
         if (infoPanel == null)
         {
-            Debug.LogWarning("Panel de información no asignado en RutherfordInfoPanelToggle.");
+            Debug.LogWarning("Panel de informaciï¿½n no asignado en RutherfordInfoPanelToggle.");
             return;
         }
 
         infoPanel.SetActive(!infoPanel.activeSelf);
+    }
+
+    public void ShowInfo()
+    {
+        if (infoPanel == null) return;
+
+        infoPanel.SetActive(true);
+    }
+
+
+    public void HideInfo()
+    {
+        if (infoPanel == null) return;
+
+        infoPanel.SetActive(false);
+    }
+
+    public void HideByTapInfo(int taps)
+    {
+        if (infoPanel == null) return;
+
+        if (taps != 3)
+        {
+            infoPanel.SetActive(false);
+        }
     }
 }

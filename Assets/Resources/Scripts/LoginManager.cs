@@ -16,6 +16,9 @@ public class LoginManager : MonoBehaviour
 
     private void Start()
     {
+        if (FadeCanvas.Instance != null)
+            FadeCanvas.Instance.Hide();
+
         loginService = new FirebaseLoginService();
 
         // Susbscribe to events from the form
@@ -141,12 +144,15 @@ public class LoginManager : MonoBehaviour
         submitButton.buttonText.text = "Iniciar Sesion";
         if (loginTask.Result.success)
         {
-            ToastManager.Instance.ShowToast(loginTask.Result.message, 1f);
+            ToastManager.Instance.ShowToast(loginTask.Result.message, 0.35f);
 
-            yield return new WaitForSeconds(1f);
+            if (FadeCanvas.Instance != null)
+            {
+                StartCoroutine(FadeCanvas.Instance.FadeToBlack());
+            }
 
-            LoadingScreenController.targetScene = "Bohr RA";
-            SceneManager.LoadScene("LoadingScene");
+            LoadingScreenController.targetScene = "Quimex AR";
+            SceneManager.LoadScene("Loading Scene");
         }
         else
         {

@@ -65,7 +65,14 @@ public class LoadingScreenController : MonoBehaviour
         progressBar.value = Mathf.Clamp01(asyncLoad.progress / 0.9f);
 
       if (asyncLoad.progress >= 0.9f && elapsedTime >= minimumLoadScreenTime)
+      {
+        if (FadeCanvas.Instance != null)
+        {
+          StartCoroutine(FadeCanvas.Instance.FadeToBlack());
+        }
+
         asyncLoad.allowSceneActivation = true;
+      }
 
       yield return null;
     }
