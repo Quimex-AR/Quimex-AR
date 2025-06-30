@@ -9,6 +9,11 @@ public class GlobalSceneLoader : MonoBehaviour
     {
         if (!string.IsNullOrEmpty(sceneName))
         {
+            if (FadeCanvas.Instance != null)
+            {
+                StartCoroutine(FadeCanvas.Instance.FadeToBlack());
+            }
+
             LoadingScreenController.targetScene = sceneName;
             SceneManager.LoadScene("LoadingScene");
         }
