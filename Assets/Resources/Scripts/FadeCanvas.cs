@@ -16,6 +16,14 @@ public class FadeCanvas : MonoBehaviour
   [Tooltip("Duration of the fade effect in seconds.")]
   public float fadeDuration = 0.5f;
 
+  void Start()
+  {
+    if (Instance != null)
+    {
+      StartCoroutine(Instance.FadeAndHide());
+    }
+  }
+
   void Awake()
   {
     if (Instance != null && Instance != this)

@@ -144,7 +144,7 @@ public class LoginManager : MonoBehaviour
         submitButton.buttonText.text = "Iniciar Sesion";
         if (loginTask.Result.success)
         {
-            ToastManager.Instance.ShowToast(loginTask.Result.message, 0.5f);
+            ToastManager.Instance.ShowToast(loginTask.Result.message, 0.35f);
 
             if (FadeCanvas.Instance != null)
             {

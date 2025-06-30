@@ -23,11 +23,6 @@ public class LoadingScreenController : MonoBehaviour
 
   void Start()
   {
-    if (FadeCanvas.Instance != null)
-    {
-      StartCoroutine(FadeCanvas.Instance.FadeAndHide());
-    }
-
     LoadPhrases();
     StartCoroutine(LoadTargetScene());
   }

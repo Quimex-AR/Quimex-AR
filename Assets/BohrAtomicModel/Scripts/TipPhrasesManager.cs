@@ -56,7 +56,7 @@ public class TipPhrasesManager : MonoBehaviour
         {
             currentState = GameTipState.Won;
             StopAllCoroutines();
-            tipText.text = "¡Felicidades! Prueba otro modo.";
+            tipText.text = "¡Felicidades! Has ganado.";
         }
     }
 
@@ -88,5 +88,10 @@ public class TipPhrasesManager : MonoBehaviour
     public void ShowWinMessage()
     {
         hasWon = true;
+    }
+
+    public void HideWinMessage()
+    {
+        hasWon = false;
     }
 }

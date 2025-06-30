@@ -3,26 +3,12 @@ using UnityEngine;
 
 public class TooltipManager : MonoBehaviour
 {
-    public static TooltipManager Instance { get; private set; }
-
     [Tooltip("Manually managed list of tooltips that will be shown")]
     public List<TooltipController> tooltipControllers = new();
 
 
     [Tooltip("Whether all tooltips should be visible at the start")]
     public bool showTooltipsAtStart = false;
-
-    private void Awake()
-    {
-        if (Instance != null && Instance != this)
-        {
-            Destroy(this);
-        }
-        else
-        {
-            Instance = this;
-        }
-    }
 
     private void Start()
     {

@@ -1,6 +1,5 @@
 using System.Collections;
 using Lean.Touch;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -36,17 +35,12 @@ public class BohrGameManager : MonoBehaviour
 
     void Start()
     {
-        if (FadeCanvas.Instance != null)
-        {
-            StartCoroutine(FadeCanvas.Instance.FadeAndHide());
-        }
-
         // Hook up button events
         easyBtn.onClick.AddListener(() => LoadAtom(easyPrefab, easyBtn));
         mediumBtn.onClick.AddListener(() => LoadAtom(mediumPrefab, mediumBtn));
         hardBtn.onClick.AddListener(() => LoadAtom(hardPrefab, hardBtn));
         restart.onClick.AddListener(Restart);
-        returnBtn.onClick.AddListener(returnBtn.GetComponent<ReturnUIButton>().OnRestartClicked);
+        returnBtn.onClick.AddListener(returnBtn.GetComponent<ReturnUIButton>().OnReturnClicked);
 
         // Start with loading spinner and restart hidden
         loadingContainer.SetActive(false);
@@ -191,6 +185,8 @@ public class BohrGameManager : MonoBehaviour
             gameObject.GetComponent<TipPhrasesManager>().ShowWinMessage();
             yield return StartCoroutine(BlinkMaterials());
             yield return StartCoroutine(AnimateOrbiting());
+            BohrAtomPhysicsController.isGameReady = false;
+            gameObject.GetComponent<TipPhrasesManager>().HideWinMessage();
             Restart();
         }
         else

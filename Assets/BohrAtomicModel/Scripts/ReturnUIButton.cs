@@ -34,7 +34,7 @@ public class ReturnUIButton : MonoBehaviour
         gameObject.SetActive(false);
     }
 
-    public void OnRestartClicked()
+    public void OnReturnClicked()
     {
         btn.interactable = false;
 
