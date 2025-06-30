@@ -16,16 +16,22 @@ EditorBuildSettings:
     guid: eda031029d8ca54579b520f03fd53fb1
   - enabled: 1
     path: Assets/Scenes/DaltonScene.unity
-    guid: e478877f3c2fffa4c80f6b9c543329fe
+    guid: d3b82ef1d1e7f5b43a6605621b2bc3b5
   - enabled: 1
     path: Assets/Scenes/DaltonGame.unity
     guid: 5a28e1aa4cdce81409d95e0bd0af24f2
   - enabled: 1
-    path: "Assets/Schr\xF6dingerAtomicModel/Scenes/SchrodingerModelScene.unity"
+    path: Assets/Scenes/SchrodingerModelScene.unity
     guid: 388054ca55a4fc24c94cc0e57233d6b8
   - enabled: 1
-    path: "Assets/Schr\xF6dingerAtomicModel/Scenes/MinigameSchrodinger.unity"
+    path: Assets/Scenes/MinigameSchrodinger.unity
     guid: 876e739d33189144a8baeb8a06bf553e
+  - enabled: 1
+    path: Assets/Scenes/ThomsonModelScene.unity
+    guid: 23620d4ac0a4e894fac7c11d0bc2ffa9
+  - enabled: 1
+    path: Assets/ThomsonAtomicModel/MinigameThomson.unity
+    guid: a98da80372a635a43ab7db283a14ff52
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
     com.unity.xr.arfoundation.simulation_settings: {fileID: 11400000, guid: 1d8d14649fea08bc896eb7a3d3d3e9f4, type: 2}

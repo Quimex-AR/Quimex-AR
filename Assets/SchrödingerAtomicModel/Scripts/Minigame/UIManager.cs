@@ -8,6 +8,9 @@ public class UIManager : MonoBehaviour
     public GameObject resultPanel;
     public GameObject instructionsPanel;
 
+    public GameObject btnVerComparacion;
+    public GameObject btnVolverResultado;
+
     public TextMeshProUGUI resultText;
     public GameManager gameManager;
 
@@ -44,6 +47,9 @@ public class UIManager : MonoBehaviour
         mainUIGroup.interactable = false;
         mainUIGroup.blocksRaycasts = false;
         mainUIGroup.alpha = 0.5f; // opcional: para que se vea desactivado
+
+        btnVerComparacion.SetActive(true);
+        btnVolverResultado.SetActive(false); // solo aparece cuando estás viendo comparación
     }
 
     public void HideResult()
@@ -60,4 +66,27 @@ public class UIManager : MonoBehaviour
         gameManager.DisableCloudCollider();
         gameManager.RestartGame();
     }
+
+    public void OnVerComparacionPressed()
+    {
+        mainUIGroup.interactable = true;
+        mainUIGroup.blocksRaycasts = true;
+        mainUIGroup.alpha = 1f;
+
+        resultPanel.SetActive(false);
+        gameManager.ShowAllVisuals();
+
+        btnVerComparacion.SetActive(false);
+        btnVolverResultado.SetActive(true);
+    }
+
+    public void OnVolverResultadoPressed()
+    {
+        gameManager.HideAllVisuals();
+        resultPanel.SetActive(true);
+
+        btnVerComparacion.SetActive(true);
+        btnVolverResultado.SetActive(false);
+    }
+
 }
