@@ -698,6 +698,8 @@ GameObject:
   - component: {fileID: 243726995}
   - component: {fileID: 243726997}
   - component: {fileID: 243726996}
+  - component: {fileID: 243726999}
+  - component: {fileID: 243726998}
   m_Layer: 0
   m_Name: ElectronText
   m_TagString: Untagged
@@ -823,6 +825,47 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 243726994}
   m_CullTransparentMesh: 1
+--- !u!114 &243726998
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 243726994}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c920429cb71271543b3c941e1d7999e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  modalPanel: {fileID: 2042848830}
+  modalText: {fileID: 1577211608}
+  textToShow: "Los electrones son part\xEDculas negativas que giran en \xF3rbitas
+    circulares alrededor del n\xFAcleo, como planetas alrededor del Sol. Su movimiento
+    equilibra la carga positiva del n\xFAcleo, manteniendo al \xE1tomo neutro. Este
+    modelo fue el primero en proponer un \xE1tomo mayormente vac\xEDo."
+  mainUIGroup: {fileID: 9133132258077698014}
+  objectToHide: {fileID: 1207341259}
+--- !u!65 &243726999
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 243726994}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 200, y: 80, z: 10}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &335646517
 GameObject:
   m_ObjectHideFlags: 0
@@ -976,6 +1019,55 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 366689928}
   m_CullTransparentMesh: 1
+--- !u!1 &368332339
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 368332340}
+  - component: {fileID: 368332341}
+  m_Layer: 5
+  m_Name: Scene
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &368332340
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 368332339}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1910391169}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 63.78622}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &368332341
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 368332339}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 509d8541fd0264145b6d618056ea881e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneName: SchrodingerModelScene
 --- !u!1 &373897475
 GameObject:
   m_ObjectHideFlags: 0
@@ -1925,7 +2017,7 @@ GameObject:
   - component: {fileID: 582220702}
   - component: {fileID: 582220701}
   - component: {fileID: 582220700}
-  - component: {fileID: 582220697}
+  - component: {fileID: 582220703}
   m_Layer: 0
   m_Name: Schrodinger ImageTarget
   m_TagString: Untagged
@@ -1933,25 +2025,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &582220697
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 582220696}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1778676317, guid: 8a9a760f95896c34689febc965510927, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mObserverBehaviour: {fileID: 582220701}
-  mHiddenRoot: {fileID: 0}
-  mTargetName: schrodinger
-  mDatasetName: Vuforia/Quimex_AR.xml
-  mCastedBehaviour: {fileID: 582220701}
-  mMeshFilter: {fileID: 0}
-  mMeshRenderer: {fileID: 0}
 --- !u!114 &582220700
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2039,14 +2112,14 @@ MonoBehaviour:
   mInitializedInEditor: 1
   mDataSetPath: Vuforia/Quimex_AR.xml
   mAspectRatio: 1
-  mImageTargetType: 0
-  mWidth: 1
-  mHeight: 1
-  mRuntimeTexture: {fileID: 0}
+  mImageTargetType: 3
+  mWidth: 0.2
+  mHeight: 0.2
+  mRuntimeTexture: {fileID: 2800000, guid: 6e955e6e7c164c44798551444f4401e5, type: 3}
   mMotionHint: 1
   mTrackingOptimization: 0
   mTrackingOptimizationNeedsUpgrade: 0
-  mPreview: {fileID: 582220697}
+  mPreview: {fileID: 582220703}
 --- !u!4 &582220702
 Transform:
   m_ObjectHideFlags: 0
@@ -2063,6 +2136,25 @@ Transform:
   - {fileID: 373897480}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &582220703
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 582220696}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1778676317, guid: 8a9a760f95896c34689febc965510927, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mObserverBehaviour: {fileID: 582220701}
+  mHiddenRoot: {fileID: 0}
+  mTargetName: schrodinger
+  mDatasetName: Vuforia/Quimex_AR.xml
+  mCastedBehaviour: {fileID: 582220701}
+  mMeshFilter: {fileID: 0}
+  mMeshRenderer: {fileID: 0}
 --- !u!1 &611417892
 GameObject:
   m_ObjectHideFlags: 0
@@ -2252,6 +2344,8 @@ GameObject:
   - component: {fileID: 661108236}
   - component: {fileID: 661108238}
   - component: {fileID: 661108237}
+  - component: {fileID: 661108240}
+  - component: {fileID: 661108239}
   m_Layer: 0
   m_Name: NucleoText
   m_TagString: Untagged
@@ -2377,6 +2471,47 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 661108235}
   m_CullTransparentMesh: 1
+--- !u!65 &661108239
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 661108235}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 200, y: 80, z: 10}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &661108240
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 661108235}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c920429cb71271543b3c941e1d7999e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  modalPanel: {fileID: 2042848830}
+  modalText: {fileID: 1577211608}
+  textToShow: "Los electrones eran part\xEDculas negativas est\xE1ticas, incrustadas
+    en la masa positiva, como pasas en un pud\xEDn. Thomson los descubri\xF3 en 1897,
+    pero su modelo no explicaba su movimiento ni niveles de energ\xEDa, solo su papel
+    en la neutralidad at\xF3mica."
+  mainUIGroup: {fileID: 9133132258077698014}
+  objectToHide: {fileID: 1207341259}
 --- !u!1 &682042431
 GameObject:
   m_ObjectHideFlags: 0
@@ -3106,6 +3241,8 @@ GameObject:
   - component: {fileID: 927584660}
   - component: {fileID: 927584662}
   - component: {fileID: 927584661}
+  - component: {fileID: 927584664}
+  - component: {fileID: 927584663}
   m_Layer: 0
   m_Name: NucleoText
   m_TagString: Untagged
@@ -3231,6 +3368,47 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 927584659}
   m_CullTransparentMesh: 1
+--- !u!114 &927584663
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 927584659}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c920429cb71271543b3c941e1d7999e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  modalPanel: {fileID: 2042848830}
+  modalText: {fileID: 1577211608}
+  textToShow: "Thomson no propuso un n\xFAcleo definido. En su modelo, la carga positiva
+    estaba distribuida uniformemente en todo el \xE1tomo, como una masa gelatinosa.
+    Esta \"nube\" positiva compensaba la carga de los electrones incrustados, manteniendo
+    la neutralidad del \xE1tomo."
+  mainUIGroup: {fileID: 9133132258077698014}
+  objectToHide: {fileID: 1207341259}
+--- !u!65 &927584664
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 927584659}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 200, y: 80, z: 10}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &944521668
 GameObject:
   m_ObjectHideFlags: 0
@@ -3242,7 +3420,7 @@ GameObject:
   - component: {fileID: 944521672}
   - component: {fileID: 944521671}
   - component: {fileID: 944521670}
-  - component: {fileID: 944521669}
+  - component: {fileID: 944521673}
   m_Layer: 0
   m_Name: Rutherford ImageTarget
   m_TagString: Untagged
@@ -3250,25 +3428,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &944521669
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 944521668}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1778676317, guid: 8a9a760f95896c34689febc965510927, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mObserverBehaviour: {fileID: 944521671}
-  mHiddenRoot: {fileID: 0}
-  mTargetName: rutherford
-  mDatasetName: Vuforia/Quimex_AR.xml
-  mCastedBehaviour: {fileID: 944521671}
-  mMeshFilter: {fileID: 0}
-  mMeshRenderer: {fileID: 0}
 --- !u!114 &944521670
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3328,18 +3487,18 @@ MonoBehaviour:
   PreviewVisible: 1
   RuntimeOcclusion: 0
   RuntimeCollider: 0
-  mTrackableName: rutherford
+  mTrackableName: Rutherford
   mInitializedInEditor: 1
   mDataSetPath: Vuforia/Quimex_AR.xml
   mAspectRatio: 1
-  mImageTargetType: 0
-  mWidth: 1
-  mHeight: 1
-  mRuntimeTexture: {fileID: 0}
+  mImageTargetType: 3
+  mWidth: 0.2
+  mHeight: 0.2
+  mRuntimeTexture: {fileID: 2800000, guid: 1aea04052a1571345a8214b1847010b0, type: 3}
   mMotionHint: 1
   mTrackingOptimization: 0
   mTrackingOptimizationNeedsUpgrade: 0
-  mPreview: {fileID: 944521669}
+  mPreview: {fileID: 944521673}
 --- !u!4 &944521672
 Transform:
   m_ObjectHideFlags: 0
@@ -3357,6 +3516,25 @@ Transform:
   - {fileID: 121884971}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &944521673
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 944521668}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1778676317, guid: 8a9a760f95896c34689febc965510927, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mObserverBehaviour: {fileID: 944521671}
+  mHiddenRoot: {fileID: 0}
+  mTargetName: Rutherford
+  mDatasetName: Vuforia/Quimex_AR.xml
+  mCastedBehaviour: {fileID: 944521671}
+  mMeshFilter: {fileID: 0}
+  mMeshRenderer: {fileID: 0}
 --- !u!1 &955119451
 GameObject:
   m_ObjectHideFlags: 0
@@ -3473,7 +3651,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 65.5
+  m_fontSize: 66.35
   m_fontSizeBase: 72
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -3826,7 +4004,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 65.5
+  m_fontSize: 66.35
   m_fontSizeBase: 72
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -3999,8 +4177,8 @@ LineRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Positions:
-  - {x: -2, y: 1.5546987, z: -0.0003660679}
-  - {x: -2, y: 1.3255, z: 0.00009865761}
+  - {x: -2, y: 1.1873493, z: -0.00018303395}
+  - {x: -2, y: 1.07275, z: 0.000049328806}
   m_Parameters:
     serializedVersion: 3
     widthMultiplier: 0.003
@@ -4478,6 +4656,117 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1220954240}
   m_CullTransparentMesh: 1
+--- !u!1 &1221457269
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1221457274}
+  - component: {fileID: 1221457273}
+  - component: {fileID: 1221457272}
+  - component: {fileID: 1221457271}
+  - component: {fileID: 1221457270}
+  m_Layer: 5
+  m_Name: Canvas
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!222 &1221457270
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1221457269}
+  m_CullTransparentMesh: 1
+--- !u!114 &1221457271
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1221457269}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IgnoreReversedGraphics: 1
+  m_BlockingObjects: 0
+  m_BlockingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+--- !u!114 &1221457272
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1221457269}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_UiScaleMode: 1
+  m_ReferencePixelsPerUnit: 100
+  m_ScaleFactor: 1
+  m_ReferenceResolution: {x: 1080, y: 1920}
+  m_ScreenMatchMode: 0
+  m_MatchWidthOrHeight: 0.5
+  m_PhysicalUnit: 3
+  m_FallbackScreenDPI: 96
+  m_DefaultSpriteDPI: 96
+  m_DynamicPixelsPerUnit: 1
+  m_PresetInfoIsWorld: 0
+--- !u!223 &1221457273
+Canvas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1221457269}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 1
+  m_Camera: {fileID: 682042436}
+  m_PlaneDistance: 1
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 0
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_VertexColorAlwaysGammaSpace: 0
+  m_AdditionalShaderChannelsFlag: 25
+  m_UpdateRectTransformForStandalone: 0
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_TargetDisplay: 0
+--- !u!224 &1221457274
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1221457269}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 2042848831}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0, y: 0}
 --- !u!1 &1232575957
 GameObject:
   m_ObjectHideFlags: 0
@@ -5051,14 +5340,14 @@ MonoBehaviour:
   PreviewVisible: 1
   RuntimeOcclusion: 0
   RuntimeCollider: 0
-  mTrackableName: bohr
+  mTrackableName: Bohr
   mInitializedInEditor: 1
   mDataSetPath: Vuforia/Quimex_AR.xml
   mAspectRatio: 1
-  mImageTargetType: 0
-  mWidth: 1
-  mHeight: 1
-  mRuntimeTexture: {fileID: 0}
+  mImageTargetType: 3
+  mWidth: 0.2
+  mHeight: 0.2
+  mRuntimeTexture: {fileID: 2800000, guid: 1790cfb97ed70964a8292b47076ef008, type: 3}
   mMotionHint: 1
   mTrackingOptimization: 0
   mTrackingOptimizationNeedsUpgrade: 0
@@ -5093,7 +5382,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mObserverBehaviour: {fileID: 1260085666}
   mHiddenRoot: {fileID: 0}
-  mTargetName: bohr
+  mTargetName: Bohr
   mDatasetName: Vuforia/Quimex_AR.xml
   mCastedBehaviour: {fileID: 1260085666}
   mMeshFilter: {fileID: 0}
@@ -5215,18 +5504,19 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1277528483}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c920429cb71271543b3c941e1d7999e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  modalPanel: {fileID: 0}
-  modalText: {fileID: 0}
+  modalPanel: {fileID: 2042848830}
+  modalText: {fileID: 1577211608}
   textToShow: "Los protones son part\xEDculas con carga positiva que se encuentran
     en el n\xFAcleo del \xE1tomo. Junto con los neutrones, determinan la masa at\xF3mica.
     La cantidad de protones define el elemento qu\xEDmico (por ejemplo, 1 prot\xF3n
     = hidr\xF3geno, 2 = helio)."
-  mainUIGroup: {fileID: 0}
+  mainUIGroup: {fileID: 9133132258077698014}
+  objectToHide: {fileID: 1207341259}
 --- !u!65 &1277528486
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5722,14 +6012,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c920429cb71271543b3c941e1d7999e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  modalPanel: {fileID: 0}
-  modalText: {fileID: 0}
+  modalPanel: {fileID: 2042848830}
+  modalText: {fileID: 1577211608}
   textToShow: "En el modelo de Schr\xF6dinger, los electrones no giran en \xF3rbitas
     fijas, sino que se distribuyen en nubes llamadas orbitales de probabilidad. Estas
     regiones representan las zonas donde es m\xE1s probable encontrar un electr\xF3n,
     seg\xFAn ecuaciones matem\xE1ticas derivadas de la mec\xE1nica cu\xE1ntica. No
     se puede conocer con certeza su posici\xF3n exacta, solo su probabilidad."
-  mainUIGroup: {fileID: 0}
+  mainUIGroup: {fileID: 9133132258077698014}
+  objectToHide: {fileID: 1207341259}
 --- !u!65 &1340267449
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5788,7 +6079,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1346717670}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.33431563, y: 0.26559317, z: -0.7866071, w: 0.44602984}
+  m_LocalRotation: {x: 0.35163817, y: 0.2795085, z: -0.77708626, w: 0.44086578}
   m_LocalPosition: {x: 0.049, y: 0.559, z: 0.913}
   m_LocalScale: {x: 1.0000497, y: 1.0000498, z: 1.00005}
   m_ConstrainProportionsScale: 1
@@ -6358,7 +6649,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1573779312}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.08570052, y: 0.4434588, z: -0.89086133, w: 0.04863921}
+  m_LocalRotation: {x: -0.086559884, y: 0.45940918, z: -0.88274187, w: 0.047089193}
   m_LocalPosition: {x: 0, y: 0.80500007, z: 1.1939999}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
@@ -6379,6 +6670,142 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 682042437}
+--- !u!1 &1577211606
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1577211607}
+  - component: {fileID: 1577211609}
+  - component: {fileID: 1577211608}
+  m_Layer: 5
+  m_Name: Text (TMP)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1577211607
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1577211606}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2042848831}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 450, y: -475}
+  m_SizeDelta: {x: 600, y: 500}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1577211608
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1577211606}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: Hola que tal, si aparece esto es que se bugeo la aplicacion ;)
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 72
+  m_fontSizeBase: 36
+  m_fontWeight: 400
+  m_enableAutoSizing: 1
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_HorizontalAlignment: 8
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_TextWrappingMode: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 0
+  m_ActiveFontFeatures: 6e72656b
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_EmojiFallbackSupport: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &1577211609
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1577211606}
+  m_CullTransparentMesh: 1
 --- !u!114 &1598582497
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6743,7 +7170,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 65.5
+  m_fontSize: 66.35
   m_fontSizeBase: 72
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -6865,18 +7292,19 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1659882928}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c920429cb71271543b3c941e1d7999e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  modalPanel: {fileID: 0}
-  modalText: {fileID: 0}
+  modalPanel: {fileID: 2042848830}
+  modalText: {fileID: 1577211608}
   textToShow: "Los neutrones son part\xEDculas sin carga el\xE9ctrica que tambi\xE9n
     se localizan en el n\xFAcleo. Su funci\xF3n principal es estabilizar el n\xFAcleo
     at\xF3mico, ya que ayudan a contrarrestar la repulsi\xF3n entre los protones.
     Su n\xFAmero puede variar entre \xE1tomos del mismo elemento (is\xF3topos)."
-  mainUIGroup: {fileID: 0}
+  mainUIGroup: {fileID: 9133132258077698014}
+  objectToHide: {fileID: 1207341259}
 --- !u!114 &1659882931
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6921,6 +7349,8 @@ GameObject:
   - component: {fileID: 1660110893}
   - component: {fileID: 1660110895}
   - component: {fileID: 1660110894}
+  - component: {fileID: 1660110897}
+  - component: {fileID: 1660110896}
   m_Layer: 0
   m_Name: NucleoText
   m_TagString: Untagged
@@ -7046,6 +7476,48 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1660110892}
   m_CullTransparentMesh: 1
+--- !u!65 &1660110896
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1660110892}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 200, y: 80, z: 10}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1660110897
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1660110892}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c920429cb71271543b3c941e1d7999e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  modalPanel: {fileID: 2042848830}
+  modalText: {fileID: 1577211608}
+  textToShow: "Dalton propuso que el \xE1tomo era una esfera maciza e indivisible,
+    como una min\xFAscula bola de billar. Cada elemento ten\xEDa \xE1tomos id\xE9nticos
+    en masa y propiedades, que se combinaban en proporciones fijas para formar compuestos.
+    Este modelo sent\xF3 las bases de la qu\xEDmica moderna, aunque luego se demostr\xF3
+    incompleto."
+  mainUIGroup: {fileID: 9133132258077698014}
+  objectToHide: {fileID: 1207341259}
 --- !u!1 &1726769337
 GameObject:
   m_ObjectHideFlags: 0
@@ -7433,7 +7905,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 65.5
+  m_fontSize: 66.35
   m_fontSizeBase: 72
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -7699,6 +8171,160 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1895149788}
   m_CullTransparentMesh: 1
+--- !u!1 &1910391168
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1910391169}
+  - component: {fileID: 1910391173}
+  - component: {fileID: 1910391172}
+  - component: {fileID: 1910391171}
+  - component: {fileID: 1910391170}
+  m_Layer: 5
+  m_Name: ExitButton
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1910391169
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1910391168}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1.567582, y: 1.9816602, z: 1.0056185}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 368332340}
+  m_Father: {fileID: 2042848831}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 450, y: -1025}
+  m_SizeDelta: {x: 160, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1910391170
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1910391168}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 306cc8c2b49d7114eaa3623786fc2126, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IgnoreLayout: 0
+  m_MinWidth: -1
+  m_MinHeight: -1
+  m_PreferredWidth: 1000
+  m_PreferredHeight: 200
+  m_FlexibleWidth: -1
+  m_FlexibleHeight: -1
+  m_LayoutPriority: 1
+--- !u!114 &1910391171
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1910391168}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 1910391172}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1659882930}
+        m_TargetAssemblyTypeName: ShowModalOnTap, Assembly-CSharp
+        m_MethodName: CloseModal
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1910391172
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1910391168}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 7363980111252105652, guid: 236587ec711348a4792e0060efb1bf73, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1910391173
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1910391168}
+  m_CullTransparentMesh: 1
 --- !u!1 &1925456341
 GameObject:
   m_ObjectHideFlags: 0
@@ -7732,7 +8358,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mObserverBehaviour: {fileID: 1925456344}
   mHiddenRoot: {fileID: 0}
-  mTargetName: dalton
+  mTargetName: Dalton
   mDatasetName: Vuforia/Quimex_AR.xml
   mCastedBehaviour: {fileID: 1925456344}
   mMeshFilter: {fileID: 0}
@@ -7796,14 +8422,14 @@ MonoBehaviour:
   PreviewVisible: 1
   RuntimeOcclusion: 0
   RuntimeCollider: 0
-  mTrackableName: dalton
+  mTrackableName: Dalton
   mInitializedInEditor: 1
   mDataSetPath: Vuforia/Quimex_AR.xml
   mAspectRatio: 1
-  mImageTargetType: 0
-  mWidth: 1
-  mHeight: 1
-  mRuntimeTexture: {fileID: 0}
+  mImageTargetType: 3
+  mWidth: 0.2
+  mHeight: 0.2
+  mRuntimeTexture: {fileID: 2800000, guid: 6d2f10315bd50d54f971a10966d4b668, type: 3}
   mMotionHint: 1
   mTrackingOptimization: 0
   mTrackingOptimizationNeedsUpgrade: 0
@@ -7993,8 +8619,8 @@ LineRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Positions:
-  - {x: -3.0268178, y: 0.9850901, z: -0.06885811}
-  - {x: -2.5645492, y: 0.84090006, z: -0.008450639}
+  - {x: -2.513409, y: 0.90254503, z: -0.034429055}
+  - {x: -2.2822745, y: 0.83045006, z: -0.0042253197}
   m_Parameters:
     serializedVersion: 3
     widthMultiplier: 0.003
@@ -8201,7 +8827,7 @@ GameObject:
   - component: {fileID: 2019251608}
   - component: {fileID: 2019251607}
   - component: {fileID: 2019251606}
-  - component: {fileID: 2019251605}
+  - component: {fileID: 2019251609}
   m_Layer: 0
   m_Name: Thomson ImageTarget
   m_TagString: Untagged
@@ -8209,25 +8835,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &2019251605
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2019251604}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1778676317, guid: 8a9a760f95896c34689febc965510927, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mObserverBehaviour: {fileID: 2019251607}
-  mHiddenRoot: {fileID: 0}
-  mTargetName: thomson
-  mDatasetName: Vuforia/Quimex_AR.xml
-  mCastedBehaviour: {fileID: 2019251607}
-  mMeshFilter: {fileID: 0}
-  mMeshRenderer: {fileID: 0}
 --- !u!114 &2019251606
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8291,14 +8898,14 @@ MonoBehaviour:
   mInitializedInEditor: 1
   mDataSetPath: Vuforia/Quimex_AR.xml
   mAspectRatio: 1
-  mImageTargetType: 0
-  mWidth: 1
-  mHeight: 1
-  mRuntimeTexture: {fileID: 0}
+  mImageTargetType: 3
+  mWidth: 0.2
+  mHeight: 0.2
+  mRuntimeTexture: {fileID: 2800000, guid: 28de13581c4c86446aa731d00c8b8611, type: 3}
   mMotionHint: 1
   mTrackingOptimization: 0
   mTrackingOptimizationNeedsUpgrade: 0
-  mPreview: {fileID: 2019251605}
+  mPreview: {fileID: 2019251609}
 --- !u!4 &2019251608
 Transform:
   m_ObjectHideFlags: 0
@@ -8316,6 +8923,25 @@ Transform:
   - {fileID: 1748319238}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2019251609
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2019251604}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1778676317, guid: 8a9a760f95896c34689febc965510927, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mObserverBehaviour: {fileID: 2019251607}
+  mHiddenRoot: {fileID: 0}
+  mTargetName: thomson
+  mDatasetName: Vuforia/Quimex_AR.xml
+  mCastedBehaviour: {fileID: 2019251607}
+  mMeshFilter: {fileID: 0}
+  mMeshRenderer: {fileID: 0}
 --- !u!1 &2023971614
 GameObject:
   m_ObjectHideFlags: 0
@@ -8920,6 +9546,110 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!1 &2042848830
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2042848831}
+  - component: {fileID: 2042848834}
+  - component: {fileID: 2042848833}
+  - component: {fileID: 2042848832}
+  m_Layer: 5
+  m_Name: Panel Info
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &2042848831
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2042848830}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -0.001749861}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1577211607}
+  - {fileID: 1910391169}
+  m_Father: {fileID: 1221457274}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -0.000030517578, y: -0.22399902}
+  m_SizeDelta: {x: 900, y: 1300}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &2042848832
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2042848830}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59f8146938fff824cb5fd77236b75775, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Padding:
+    m_Left: 0
+    m_Right: 0
+    m_Top: 100
+    m_Bottom: 100
+  m_ChildAlignment: 4
+  m_Spacing: 0
+  m_ChildForceExpandWidth: 1
+  m_ChildForceExpandHeight: 1
+  m_ChildControlWidth: 0
+  m_ChildControlHeight: 0
+  m_ChildScaleWidth: 0
+  m_ChildScaleHeight: 0
+  m_ReverseArrangement: 0
+--- !u!114 &2042848833
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2042848830}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.8037735, g: 0.8037735, b: 0.8037735, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 2976135448196196091, guid: c902e08bd83e04947b6e8d7f31f385be, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &2042848834
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2042848830}
+  m_CullTransparentMesh: 1
 --- !u!1 &2111346703
 GameObject:
   m_ObjectHideFlags: 0
@@ -10388,6 +11118,8 @@ GameObject:
   - component: {fileID: 9096329108148787421}
   - component: {fileID: 1216751398009417948}
   - component: {fileID: 8719953527916441418}
+  - component: {fileID: 9096329108148787423}
+  - component: {fileID: 9096329108148787422}
   m_Layer: 0
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -10634,6 +11366,7 @@ GameObject:
   - component: {fileID: 4706906483778012321}
   - component: {fileID: 9133132258077698013}
   - component: {fileID: 7347097253601022403}
+  - component: {fileID: 9133132258077698014}
   m_Layer: 5
   m_Name: UI
   m_TagString: Untagged
@@ -12250,7 +12983,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 65.5
+  m_fontSize: 66.35
   m_fontSizeBase: 72
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -12824,6 +13557,8 @@ GameObject:
   - component: {fileID: 6705634637969518543}
   - component: {fileID: 3733854621487384526}
   - component: {fileID: 6498953220766095448}
+  - component: {fileID: 6705634637969518545}
+  - component: {fileID: 6705634637969518544}
   m_Layer: 0
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -13417,6 +14152,8 @@ GameObject:
   - component: {fileID: 4638420410186658457}
   - component: {fileID: 5940161641142565018}
   - component: {fileID: 4090233569128354551}
+  - component: {fileID: 5940161641142565020}
+  - component: {fileID: 5940161641142565019}
   m_Layer: 0
   m_Name: NucleoText
   m_TagString: Untagged
@@ -14796,7 +15533,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 65.5
+  m_fontSize: 66.35
   m_fontSizeBase: 72
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -15302,6 +16039,8 @@ GameObject:
   - component: {fileID: 2638015389488000497}
   - component: {fileID: 5350978769479566832}
   - component: {fileID: 2568113558016268902}
+  - component: {fileID: 5350978769479566834}
+  - component: {fileID: 5350978769479566833}
   m_Layer: 0
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -15376,6 +16115,47 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5295583091041740722}
   m_CullTransparentMesh: 1
+--- !u!114 &5350978769479566833
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5295583091041740722}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c920429cb71271543b3c941e1d7999e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  modalPanel: {fileID: 2042848830}
+  modalText: {fileID: 1577211608}
+  textToShow: "Gira en \xF3rbitas circulares cuantizadas alrededor del n\xFAcleo,
+    con carga negativa (\u20131). Su energ\xEDa depende del nivel orbital. Bohr propuso
+    que los electrones saltan entre \xF3rbitas al absorber/emitir energ\xEDa, explicando
+    los espectros at\xF3micos. Su masa es ~1/1836 la del prot\xF3n."
+  mainUIGroup: {fileID: 9133132258077698014}
+  objectToHide: {fileID: 1207341259}
+--- !u!65 &5350978769479566834
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5295583091041740722}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 800, y: 300, z: 30}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &5400669240866268837
 Transform:
   m_ObjectHideFlags: 0
@@ -16167,6 +16947,47 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4067362347023289838}
   m_CullTransparentMesh: 1
+--- !u!114 &5940161641142565019
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4067362347023289838}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c920429cb71271543b3c941e1d7999e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  modalPanel: {fileID: 2042848830}
+  modalText: {fileID: 1577211608}
+  textToShow: "El n\xFAcleo es diminuto y denso, concentrando toda la carga positiva
+    y casi toda la masa del \xE1tomo. Est\xE1 formado por protones (y m\xE1s tarde
+    se descubri\xF3 que tambi\xE9n neutrones). Los electrones orbitan alrededor de
+    \xE9l, dejando un espacio vac\xEDo predominante en el \xE1tomo."
+  mainUIGroup: {fileID: 9133132258077698014}
+  objectToHide: {fileID: 1207341259}
+--- !u!65 &5940161641142565020
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4067362347023289838}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 200, y: 80, z: 10}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &5943551382038457259
 Transform:
   m_ObjectHideFlags: 0
@@ -16237,7 +17058,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0.82, z: 0}
-  m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 7597789247269513456}
@@ -17288,6 +18109,47 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &6705634637969518544
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3525930287677826444}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c920429cb71271543b3c941e1d7999e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  modalPanel: {fileID: 2042848830}
+  modalText: {fileID: 1577211608}
+  textToShow: "Part\xEDcula neutra ubicada en el n\xFAcleo, con masa similar al prot\xF3n.
+    No tiene carga el\xE9ctrica, pero contribuye a la masa at\xF3mica y estabiliza
+    el n\xFAcleo, evitando que los protones se repelan. Fue descubierto despu\xE9s
+    de Bohr, pero se incluye en versiones modernas del modelo."
+  mainUIGroup: {fileID: 9133132258077698014}
+  objectToHide: {fileID: 1207341259}
+--- !u!65 &6705634637969518545
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3525930287677826444}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 800, y: 300, z: 30}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &6742041147717630642
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20005,6 +20867,47 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &9096329108148787422
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1431312246598308510}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c920429cb71271543b3c941e1d7999e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  modalPanel: {fileID: 2042848830}
+  modalText: {fileID: 1577211608}
+  textToShow: "En el \xE1tomo de Bohr, el prot\xF3n reside en el n\xFAcleo, con carga
+    positiva (+1). Su masa es ~1.836 veces mayor que la del electr\xF3n. Junto a
+    los neutrones, forma el n\xFAcleo denso que atrae a los electrones, manteniendo
+    la estabilidad at\xF3mica."
+  mainUIGroup: {fileID: 9133132258077698014}
+  objectToHide: {fileID: 1207341259}
+--- !u!65 &9096329108148787423
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1431312246598308510}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 800, y: 300, z: 30}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &9118736725328896491
 Transform:
   m_ObjectHideFlags: 0
@@ -20043,6 +20946,18 @@ MonoBehaviour:
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
   m_PresetInfoIsWorld: 0
+--- !u!225 &9133132258077698014
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1612174546795402092}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!33 &9148027412164860661
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -20297,5 +21212,6 @@ SceneRoots:
   - {fileID: 582220702}
   - {fileID: 3372145281687651595}
   - {fileID: 7018166101337206324}
+  - {fileID: 1221457274}
   - {fileID: 5673452162009584770}
   - {fileID: 1241092233}
