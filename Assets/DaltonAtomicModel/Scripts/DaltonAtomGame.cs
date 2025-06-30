@@ -21,12 +21,30 @@ public class DaltonAtomGame : MonoBehaviour
     public TextMeshProUGUI scoreText;
     public TextMeshProUGUI timerText;
     public Button backButton;
+    public Button howToPlayButton; // Nuevo botón
+    public GameObject howToPlayPanel; // Panel de instrucciones
+    public Button closeHowToPlayButton; // Botón para cerrar instrucciones
     public GameObject winPanel;
     public TextMeshProUGUI winScoreText;
     public Button playAgainButton;
     public GameObject gameOverPanel;
     public TextMeshProUGUI gameOverScoreText;
     public Button retryButton;
+    
+    [Header("Tips System")]
+    public TextMeshProUGUI tipsText;
+    public float tipChangeInterval = 5f; // Cambiar tip cada 5 segundos
+    private string[] gameTips = {
+        "Tip: El Hidrógeno (H) es el elemento más ligero",
+        "Curiosidad: Dalton propuso que los átomos eran esferas sólidas en 1803",
+        "Dato: El Nitrógeno (N) forma el 78% de nuestra atmósfera",
+        "Pista: Los átomos rojos son Oxígeno (O)",
+        "Curiosidad: El Carbono (C) es la base de toda la vida",
+        "Tip: ¡Arrastra rápido! El tiempo corre",
+        "Consejo: Cada acierto suma 10 puntos",
+        "Cuidado: Los errores restan 5 puntos",
+        "Dato: John Dalton era daltónico (no distinguía colores)"
+    };
     
     [Header("Game Settings")]
     public int atomsToGenerate = 12;
@@ -57,9 +75,16 @@ public class DaltonAtomGame : MonoBehaviour
         currentTime = gameTime;
         SetupContainers();
         StartCoroutine(StartGame());
+        StartCoroutine(CycleTips()); // Iniciar el ciclo de tips
         
         if (backButton)
             backButton.onClick.AddListener(GoBackToAR);
+            
+        if (howToPlayButton)
+            howToPlayButton.onClick.AddListener(ShowHowToPlay);
+            
+        if (closeHowToPlayButton)
+            closeHowToPlayButton.onClick.AddListener(HideHowToPlay);
             
         if (playAgainButton)
             playAgainButton.onClick.AddListener(RestartGame);
@@ -72,10 +97,10 @@ public class DaltonAtomGame : MonoBehaviour
         {
             atomTypes = new AtomData[]
             {
-new AtomData { elementName = "H", atomColor = new Color(1f, 0f, 1f), containerIndex = 0 }, // Magenta/Púrpura
-new AtomData { elementName = "O", atomColor = Color.red, containerIndex = 1 }, // Rojo (ya está correcto)
-new AtomData { elementName = "C", atomColor = Color.green, containerIndex = 2 }, // Verde
-new AtomData { elementName = "N", atomColor = Color.blue, containerIndex = 3 } // Azul (ya está correcto)
+            new AtomData { elementName = "H", atomColor = new Color(1f, 0f, 1f), containerIndex = 0 }, // Magenta/Púrpura
+            new AtomData { elementName = "O", atomColor = Color.red, containerIndex = 1 }, // Rojo
+            new AtomData { elementName = "C", atomColor = Color.green, containerIndex = 2 }, // Verde
+            new AtomData { elementName = "N", atomColor = Color.blue, containerIndex = 3 } // Azul
             };
         }
     }
@@ -261,27 +286,54 @@ new AtomData { elementName = "N", atomColor = Color.blue, containerIndex = 3 } /
         }
     }
     
-    void EndGame()
+ void EndGame()
+{
+    gameActive = false;
+    
+    // DESTRUIR O DESACTIVAR TODOS LOS ÁTOMOS
+    DestroyAllAtoms();
+    
+    // Pausar el tiempo del juego
+    Time.timeScale = 0f;
+    
+    // Ocultar el UI del juego y los contenedores
+    if (gameUI) gameUI.SetActive(false);
+    if (containersPanel) containersPanel.SetActive(false);
+    
+    if (gameOverPanel) 
     {
-        gameActive = false;
+        gameOverPanel.SetActive(true);
+        // Asegurar que el panel esté al frente
+        gameOverPanel.transform.SetAsLastSibling();
         
-        // Pausar el tiempo del juego
-        Time.timeScale = 0f;
-        
-        // Ocultar el UI del juego y los contenedores
-        if (gameUI) gameUI.SetActive(false);
-        if (containersPanel) containersPanel.SetActive(false);
-        
-        if (gameOverPanel) 
+        if (gameOverScoreText)
+            gameOverScoreText.text = "Puntuación Final: " + score;
+    }
+}
+
+// Agregar este nuevo método
+void DestroyAllAtoms()
+{
+    // Método 1: Destruir todos los átomos activos
+    foreach (GameObject atom in activeAtoms)
+    {
+        if (atom != null)
         {
-            gameOverPanel.SetActive(true);
-            // Asegurar que el panel esté al frente
-            gameOverPanel.transform.SetAsLastSibling();
-            
-            if (gameOverScoreText)
-                gameOverScoreText.text = "Puntuación Final: " + score;
+            Destroy(atom);
         }
     }
+    activeAtoms.Clear();
+    
+    // Método 2: Por si acaso, buscar todos los átomos restantes
+    DraggableAtom[] remainingAtoms = FindObjectsOfType<DraggableAtom>();
+    foreach (DraggableAtom atom in remainingAtoms)
+    {
+        if (atom != null)
+        {
+            Destroy(atom.gameObject);
+        }
+    }
+}
     
     void WinGame()
     {
@@ -300,12 +352,39 @@ new AtomData { elementName = "N", atomColor = Color.blue, containerIndex = 3 } /
             // Asegurar que el panel esté al frente
             winPanel.transform.SetAsLastSibling();
             
+            // Animación de fade in opcional
+            Image panelImage = winPanel.GetComponent<Image>();
+            if (panelImage)
+            {
+                Color c = panelImage.color;
+                c.a = 0;
+                panelImage.color = c;
+                StartCoroutine(FadeIn(panelImage, 0.5f));
+            }
+            
             if (winScoreText)
                 winScoreText.text = "¡Excelente!\nPuntuación: " + score;
         }
         
         if (audioSource && winSound)
             audioSource.PlayOneShot(winSound);
+    }
+    
+    IEnumerator FadeIn(Image image, float duration)
+    {
+        float elapsed = 0;
+        Color c = image.color;
+        
+        while (elapsed < duration)
+        {
+            elapsed += Time.unscaledDeltaTime;
+            c.a = Mathf.Lerp(0, 1, elapsed / duration);
+            image.color = c;
+            yield return null;
+        }
+        
+        c.a = 1;
+        image.color = c;
     }
     
     public void RestartGame()
@@ -317,7 +396,7 @@ new AtomData { elementName = "N", atomColor = Color.blue, containerIndex = 3 } /
     public void GoBackToAR()
     {
         Time.timeScale = 1f; // Restaurar el tiempo
-        SceneManager.LoadScene("DaltonScene"); //  escena AR
+        SceneManager.LoadScene(0); // Índice 0 = DaltonScene (escena AR)
     }
     
     // Corrutina simple para hacer shake sin LeanTween
@@ -337,5 +416,67 @@ new AtomData { elementName = "N", atomColor = Color.blue, containerIndex = 3 } /
         }
         
         atom.transform.position = originalPos;
+    }
+    
+    // Sistema de tips rotatorios
+    IEnumerator CycleTips()
+    {
+        int currentTipIndex = 0;
+        
+        while (true)
+        {
+            if (tipsText != null && gameActive)
+            {
+                // Fade out
+                yield return StartCoroutine(FadeTextTo(0f, 0.5f));
+                
+                // Cambiar texto
+                tipsText.text = gameTips[currentTipIndex];
+                currentTipIndex = (currentTipIndex + 1) % gameTips.Length;
+                
+                // Fade in
+                yield return StartCoroutine(FadeTextTo(1f, 0.5f));
+            }
+            
+            yield return new WaitForSeconds(tipChangeInterval);
+        }
+    }
+    
+    IEnumerator FadeTextTo(float targetAlpha, float duration)
+    {
+        if (tipsText == null) yield break;
+        
+        Color currentColor = tipsText.color;
+        float startAlpha = currentColor.a;
+        float elapsed = 0f;
+        
+        while (elapsed < duration)
+        {
+            elapsed += Time.deltaTime;
+            float newAlpha = Mathf.Lerp(startAlpha, targetAlpha, elapsed / duration);
+            tipsText.color = new Color(currentColor.r, currentColor.g, currentColor.b, newAlpha);
+            yield return null;
+        }
+        
+        tipsText.color = new Color(currentColor.r, currentColor.g, currentColor.b, targetAlpha);
+    }
+    
+    // Mostrar panel de instrucciones
+    public void ShowHowToPlay()
+    {
+        if (howToPlayPanel != null)
+        {
+            howToPlayPanel.SetActive(true);
+            Time.timeScale = 0f; // Pausar el juego
+        }
+    }
+    
+    public void HideHowToPlay()
+    {
+        if (howToPlayPanel != null)
+        {
+            howToPlayPanel.SetActive(false);
+            Time.timeScale = 1f; // Reanudar el juego
+        }
     }
 }

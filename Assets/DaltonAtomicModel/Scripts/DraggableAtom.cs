@@ -9,12 +9,16 @@ public class DraggableAtom : MonoBehaviour
     public Image atomImage;
     public TextMeshProUGUI atomText;
     
+    [Header("Touch Settings")]
+    public float touchRadius = 50f; // Radio de detección más preciso
+    
     private DaltonAtomGame.AtomData atomData;
     private DaltonAtomGame gameManager;
     private RectTransform rectTransform;
     private Canvas canvas;
     private Vector3 originalPosition;
     private LeanFinger draggingFinger;
+    private bool isDragging = false;
     
     void Awake()
     {
@@ -25,18 +29,22 @@ public class DraggableAtom : MonoBehaviour
         
         if (atomText == null)
             atomText = GetComponentInChildren<TextMeshProUGUI>();
-            
-        // Agregar LeanSelectableByFinger si no existe
-        var selectable = GetComponent<LeanSelectableByFinger>();
-        if (selectable == null)
-        {
-            selectable = gameObject.AddComponent<LeanSelectableByFinger>();
-        }
     }
     
     void Start()
     {
         canvas = GetComponentInParent<Canvas>();
+        
+        // Ajustar el collider al tamaño real del átomo
+        var collider = GetComponent<BoxCollider2D>();
+        if (collider == null)
+        {
+            collider = gameObject.AddComponent<BoxCollider2D>();
+        }
+        
+        // Hacer el collider más pequeño y centrado
+        collider.size = rectTransform.sizeDelta * 0.8f; // 80% del tamaño para evitar overlaps
+        collider.isTrigger = true;
     }
     
     void OnEnable()
@@ -70,17 +78,8 @@ public class DraggableAtom : MonoBehaviour
             atomText.text = atomData.elementName;
             atomText.color = GetContrastColor(atomData.atomColor);
         }
-        
-        // Asegurar que tenga BoxCollider2D para detección
-        var collider = GetComponent<BoxCollider2D>();
-        if (collider == null)
-        {
-            collider = gameObject.AddComponent<BoxCollider2D>();
-            collider.size = rectTransform.sizeDelta;
-        }
     }
     
-
     Color GetContrastColor(Color color)
     {
         // Caso especial para el carbono (verde) - forzar texto blanco
@@ -96,23 +95,64 @@ public class DraggableAtom : MonoBehaviour
     
     void HandleFingerDown(LeanFinger finger)
     {
-        // Verificar si el toque está sobre este átomo
-        Vector2 worldPoint = finger.GetWorldPosition(rectTransform.position.z, canvas.worldCamera);
+        // Prevenir múltiples selecciones simultáneas
+        if (isDragging) return;
         
-        if (RectTransformUtility.RectangleContainsScreenPoint(rectTransform, finger.ScreenPosition, canvas.worldCamera))
+        // Convertir posición del toque a coordenadas del canvas
+        Vector2 localPoint;
+        RectTransformUtility.ScreenPointToLocalPointInRectangle(
+            canvas.transform as RectTransform,
+            finger.ScreenPosition,
+            canvas.worldCamera,
+            out localPoint
+        );
+        
+        Vector3 worldPoint = canvas.transform.TransformPoint(localPoint);
+        
+        // Verificar distancia precisa al centro del átomo
+        float distance = Vector2.Distance(transform.position, worldPoint);
+        
+        // Solo seleccionar si el toque está dentro del radio específico del átomo
+        if (distance <= touchRadius)
         {
-            draggingFinger = finger;
-            originalPosition = transform.position;
-            transform.SetAsLastSibling(); // Traer al frente
-            
-            // Efecto visual de selección
-            transform.localScale = Vector3.one * 1.1f;
+            // Verificar que no haya otro átomo más cerca
+            if (IsClosestAtomToTouch(worldPoint))
+            {
+                draggingFinger = finger;
+                isDragging = true;
+                originalPosition = transform.position;
+                transform.SetAsLastSibling(); // Traer al frente
+                
+                // Efecto visual de selección
+                transform.localScale = Vector3.one * 1.1f;
+            }
         }
+    }
+    
+    bool IsClosestAtomToTouch(Vector3 touchWorldPos)
+    {
+        DraggableAtom[] allAtoms = FindObjectsOfType<DraggableAtom>();
+        float myDistance = Vector2.Distance(transform.position, touchWorldPos);
+        
+        foreach (DraggableAtom otherAtom in allAtoms)
+        {
+            if (otherAtom == this) continue;
+            
+            float otherDistance = Vector2.Distance(otherAtom.transform.position, touchWorldPos);
+            
+            // Si hay otro átomo más cerca, no seleccionar este
+            if (otherDistance < myDistance)
+            {
+                return false;
+            }
+        }
+        
+        return true;
     }
     
     void HandleFingerUpdate(LeanFinger finger)
     {
-        if (finger != draggingFinger) return;
+        if (finger != draggingFinger || !isDragging) return;
         
         // Convertir posición del dedo a posición en el canvas
         Vector2 localPoint;
@@ -128,9 +168,10 @@ public class DraggableAtom : MonoBehaviour
     
     void HandleFingerUp(LeanFinger finger)
     {
-        if (finger != draggingFinger) return;
+        if (finger != draggingFinger || !isDragging) return;
         
         draggingFinger = null;
+        isDragging = false;
         transform.localScale = Vector3.one;
         
         CheckForDrop();
@@ -167,9 +208,16 @@ public class DraggableAtom : MonoBehaviour
         }
         
         // Si no se soltó en ningún contenedor, volver a la posición original
-        if (!droppedCorrectly && draggingFinger == null)
+        if (!droppedCorrectly)
         {
             transform.position = originalPosition;
         }
+    }
+    
+    // Método para debugging - puedes removerlo después
+    void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireSphere(transform.position, touchRadius);
     }
 }
