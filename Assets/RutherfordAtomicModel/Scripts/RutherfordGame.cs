@@ -63,7 +63,7 @@ public class RutherfordSimpleGame : MonoBehaviour
     void SetupButtons()
     {
         if (backButton)
-            backButton.onClick.AddListener(() => SceneManager.LoadScene(0));
+            backButton.onClick.AddListener(GoBackToMenu);
 
         nucleusButton.onClick.AddListener(() => CheckAnswer("núcleo"));
         electronButton.onClick.AddListener(() => CheckAnswer("electrón"));
@@ -99,14 +99,16 @@ public class RutherfordSimpleGame : MonoBehaviour
 
         EventTrigger.Entry enterEntry = new EventTrigger.Entry();
         enterEntry.eventID = EventTriggerType.PointerEnter;
-        enterEntry.callback.AddListener((data) => {
+        enterEntry.callback.AddListener((data) =>
+        {
             if (canClick) SetCircleAppearance(button, hoverColor);
         });
         trigger.triggers.Add(enterEntry);
 
         EventTrigger.Entry exitEntry = new EventTrigger.Entry();
         exitEntry.eventID = EventTriggerType.PointerExit;
-        exitEntry.callback.AddListener((data) => {
+        exitEntry.callback.AddListener((data) =>
+        {
             if (canClick) SetCircleAppearance(button, normalColor);
         });
         trigger.triggers.Add(exitEntry);
@@ -255,8 +257,13 @@ public class RutherfordSimpleGame : MonoBehaviour
 
     public void GoBackToMenu()
     {
-        Time.timeScale = 1f;
-        SceneManager.LoadScene(0);
+        if (FadeCanvas.Instance != null)
+        {
+            StartCoroutine(FadeCanvas.Instance.FadeToBlack());
+        }
+
+        LoadingScreenController.targetScene = "Quimex AR";
+        SceneManager.LoadScene("Loading Scene");
     }
 
     public void ShowHowToPlay()

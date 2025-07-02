@@ -21,11 +21,14 @@ EditorBuildSettings:
     path: Assets/Scenes/MinigameSchrodinger.unity
     guid: 876e739d33189144a8baeb8a06bf553e
   - enabled: 1
-    path: Assets/ThomsonAtomicModel/MinigameThomson.unity
+    path: Assets/Scenes/MinigameThomson.unity
     guid: a98da80372a635a43ab7db283a14ff52
   - enabled: 1
     path: Assets/Scenes/Bohr Game.unity
     guid: 770b14f9fe5a0b9a9bf98a46d68a69b6
+  - enabled: 1
+    path: Assets/Scenes/RutherfordGame.unity
+    guid: 274322277fed6a548936c145a24e4a14
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
     com.unity.xr.arfoundation.simulation_settings: {fileID: 11400000, guid: 1d8d14649fea08bc896eb7a3d3d3e9f4, type: 2}

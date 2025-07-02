@@ -15,7 +15,7 @@ public class GlobalSceneLoader : MonoBehaviour
             }
 
             LoadingScreenController.targetScene = sceneName;
-            SceneManager.LoadScene("LoadingScene");
+            SceneManager.LoadScene("Loading Scene");
         }
         else
         {

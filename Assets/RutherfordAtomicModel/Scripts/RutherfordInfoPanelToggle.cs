@@ -5,6 +5,17 @@ public class RutherfordInfoPanelToggle : MonoBehaviour
 {
     public GameObject infoPanel;
 
+    public bool showAtStart = false;
+
+    void Start()
+    {
+        if (infoPanel != null && !showAtStart)
+        {
+            infoPanel.SetActive(false);
+        }
+
+    }
+
     public void ToggleInfo()
     {
         if (infoPanel == null)
