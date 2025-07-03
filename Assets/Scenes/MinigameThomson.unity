@@ -3827,7 +3827,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 509d8541fd0264145b6d618056ea881e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: SchrodingerModelScene
+  sceneName: Quimex AR
 --- !u!224 &1783233996
 RectTransform:
   m_ObjectHideFlags: 0

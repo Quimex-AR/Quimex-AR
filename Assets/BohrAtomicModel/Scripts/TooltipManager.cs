@@ -61,4 +61,15 @@ public class TooltipManager : MonoBehaviour
             tooltip.Hide();
         }
     }
+
+    public void ManageTooltipsByTaps(int tabs)
+    {
+        if (tabs != 2)
+        {
+            foreach (var tooltip in tooltipControllers)
+            {
+                tooltip.Hide();
+            }
+        }
+    }
 }
