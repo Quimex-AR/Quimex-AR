@@ -10,7 +10,7 @@ EditorBuildSettings:
     guid: 487fd4775a3822af99ac90ffed22f7eb
   - enabled: 1
     path: Assets/Scenes/Loading Scene.unity
-    guid: fbc780f35270a04609b2d24ba51a3d0a
+    guid: ddf2467bd2a4126dd84da6aef02bb948
   - enabled: 1
     path: Assets/Scenes/Quimex AR.unity
     guid: dc1710bedc8c9d41ba6bdd9d8e58c2f2

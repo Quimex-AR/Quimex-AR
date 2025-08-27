@@ -1,10 +1,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TooltipManager : MonoBehaviour
+public class TooltipsVisibilityManager : MonoBehaviour
 {
     [Tooltip("Manually managed list of tooltips that will be shown")]
-    public List<TooltipController> tooltipControllers = new();
+    public List<TooltipVisibilityController> tooltipControllers = new();
 
 
     [Tooltip("Whether all tooltips should be visible at the start")]

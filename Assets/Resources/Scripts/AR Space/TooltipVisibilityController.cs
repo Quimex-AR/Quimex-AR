@@ -5,7 +5,7 @@
 using UnityEngine;
 
 // [ExecuteAlways]
-public class TooltipController : MonoBehaviour
+public class TooltipVisibilityController : MonoBehaviour
 {
     // [Header("Tooltip Settings")]
 
