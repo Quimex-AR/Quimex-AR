@@ -543,7 +543,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0, g: 0.14681661, b: 0.383, a: 1}
+  m_BackGroundColor: {r: 0.9918033, g: 0.99590164, b: 1, a: 1}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -1127,6 +1127,10 @@ PrefabInstance:
     - target: {fileID: 5042606136765740398, guid: d258f5756035154f695bf9ce4f7dc5bc, type: 3}
       propertyPath: m_Name
       value: Modal Info
+      objectReference: {fileID: 0}
+    - target: {fileID: 5042606136765740398, guid: d258f5756035154f695bf9ce4f7dc5bc, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6242735646627163941, guid: d258f5756035154f695bf9ce4f7dc5bc, type: 3}
       propertyPath: m_Pivot.x
@@ -1805,6 +1809,12 @@ MonoBehaviour:
     prefab: {fileID: 8319287449687589645, guid: 14cf53524505ebe2f9700653118662e9, type: 3}
   - targetName: dalton
     prefab: {fileID: 5170651630310943576, guid: 38bcf45e1950167d59545afaad274ed3, type: 3}
+  - targetName: rutherford
+    prefab: {fileID: 8000777660070775566, guid: 13aac0a2905a29306925324953d7452e, type: 3}
+  - targetName: thomson
+    prefab: {fileID: 911559778138155468, guid: 7b3c7560cbd2c8003b73f280207c7b9f, type: 3}
+  - targetName: schrodinger
+    prefab: {fileID: 6862314871317088830, guid: 0302c3abb8338643e987d0352720c7cc, type: 3}
   spawnedInstance: {fileID: 0}
   currentTarget: 
   defaultStickyMode: 0

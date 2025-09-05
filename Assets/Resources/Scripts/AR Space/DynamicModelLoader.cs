@@ -71,10 +71,6 @@ public class DynamicModelLoader : MonoBehaviour
         {
             Destroy(gameObject);
         }
-        else
-        {
-            Debug.Log($"[DynamicModelLoader] No instance found");
-        }
 
         Instance = this;
         StickyMode = defaultStickyMode;
@@ -162,12 +158,7 @@ public class DynamicModelLoader : MonoBehaviour
             {
                 if (!targetPrefabMap.ContainsKey(pair.targetName))
                 {
-                    Debug.Log($"[DynamicModelLoader] Target name added: {pair.targetName}");
                     targetPrefabMap.Add(pair.targetName, pair.prefab);
-                }
-                else
-                {
-                    Debug.LogWarning($"[DynamicModelLoader] Duplicate target name found: {pair.targetName}. Ignoring duplicate.");
                 }
             }
         }
