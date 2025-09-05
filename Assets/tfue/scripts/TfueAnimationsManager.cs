@@ -14,6 +14,9 @@ public class TfueAnimationsManager : MonoBehaviour
     [Range(0f, 3f)]
     [SerializeField] private float timeBetweenAnimationLoops = 1f;
 
+    [Header("Audio")]
+    [SerializeField] private TutorialAudioManager audioManager;
+
     void Awake()
     {
         if (Instance == null)
@@ -24,6 +27,8 @@ public class TfueAnimationsManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        audioManager = FindFirstObjectByType<TutorialAudioManager>();
     }
 
     void Start()
@@ -42,6 +47,7 @@ public class TfueAnimationsManager : MonoBehaviour
     #region Animations
     public void HandSalutation()
     {
+        audioManager?.PlayAudioForAnimation("hand_salutation");
         handAnimator.SetHandModelPosition(-0.04f, -2f, -6.09f);
         handAnimator.SetHandModelRotation(-14.083f, 180.347f, -0.537f);
         handAnimator.SetHandModelScale(0.1f, 0.1f, 0.1f);
@@ -49,11 +55,13 @@ public class TfueAnimationsManager : MonoBehaviour
     }
     public void ImageTargetShow()
     {
+        audioManager?.PlayAudioForAnimation("image_target_show");
         handAnimator.Model.SetActive(false);
         atomicModelAnimator.ImageTargetShow();
     }
     public void AtomicModelShow()
     {
+        audioManager?.PlayAudioForAnimation("atomic_model_show");
         atomicModelAnimator.AtomicModelShow();
 
         atomicModelAnimator.TooltipHide();
@@ -63,6 +71,7 @@ public class TfueAnimationsManager : MonoBehaviour
     }
     public void HandSwipe()
     {
+        audioManager?.PlayAudioForAnimation("hand_swipe");
         handAnimator.Model.SetActive(true);
         handAnimator.SetHandModelPosition(0.69f, -1.02f, -7.58f);
         handAnimator.SetHandModelRotation(-13.57f, 169.803f, -14.981f);
@@ -72,6 +81,7 @@ public class TfueAnimationsManager : MonoBehaviour
     }
     public void HandZoomOut()
     {
+        audioManager?.PlayAudioForAnimation("hand_zoom_out");
         StopSpinLoop();
         atomicModelAnimator.AtomicModel.transform.rotation = atomicModelAnimator.AtomicModelBaseRotation;
 
@@ -83,6 +93,7 @@ public class TfueAnimationsManager : MonoBehaviour
 
     public void HandZoomIn()
     {
+        audioManager?.PlayAudioForAnimation("hand_zoom_in");
         StopSpinLoop();
         atomicModelAnimator.AtomicModel.transform.localScale = atomicModelAnimator.AtomicModelBaseLocalScale;
 
@@ -93,6 +104,7 @@ public class TfueAnimationsManager : MonoBehaviour
     }
     public void AtomicModelBackToNormal()
     {
+        audioManager?.PlayAudioForAnimation("atomic_model_back_to_normal");
         handAnimator.Model.SetActive(false);
 
         StopScaleLoop();
@@ -111,6 +123,7 @@ public class TfueAnimationsManager : MonoBehaviour
     }
     public void AtomicModelTooltips()
     {
+        audioManager?.PlayAudioForAnimation("atomic_model_tooltips");
         StopScaleLoop();
         atomicModelAnimator.AtomicModel.transform.localScale = atomicModelAnimator.AtomicModelBaseLocalScale;
 
@@ -118,6 +131,7 @@ public class TfueAnimationsManager : MonoBehaviour
     }
     public void AtomicModelTooltipsInformationShow()
     {
+        audioManager?.PlayAudioForAnimation("atomic_model_tooltips_information_show");
         handAnimator.Model.SetActive(true);
         handAnimator.SetHandModelPosition(0.811f, -0.53f, -7.23f);
         handAnimator.SetHandModelRotation(-17.176f, 143.661f, -12.267f);
@@ -128,6 +142,7 @@ public class TfueAnimationsManager : MonoBehaviour
     }
     public void AtomicModelPlatesShow()
     {
+        audioManager?.PlayAudioForAnimation("atomic_model_plates_show");
         StopCanvasInfoShowLoop();
 
         atomicModelAnimator.CanvasInfoHide();
@@ -137,15 +152,18 @@ public class TfueAnimationsManager : MonoBehaviour
     }
     public void AtomicModelPlatesModelNameShow()
     {
+        audioManager?.PlayAudioForAnimation("atomic_model_plates_model_name_show");
         atomicModelAnimator.PlateGameHide();
     }
     public void AtomicModelPlatesGameShow()
     {
+        audioManager?.PlayAudioForAnimation("atomic_model_plates_game_show");
         atomicModelAnimator.PlateAtomicModelNameHide();
         atomicModelAnimator.PlateGameShow();
     }
     public void HandAdieu()
     {
+        audioManager?.PlayAudioForAnimation("hand_salutation");
         atomicModelAnimator.PlateAtomicModelNameShow();
         handAnimator.Model.SetActive(true);
         handAnimator.SetHandModelPosition(-0.04f, -1.214f, -7.919f);
