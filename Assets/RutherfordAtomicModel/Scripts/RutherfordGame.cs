@@ -241,10 +241,8 @@ public class RutherfordSimpleGame : MonoBehaviour
             {
                 float accuracy = (float)correctAnswers / targets.Length * 100;
                 winText.text = $"¡Juego Completado!\n\n" +
-                               $"Respuestas correctas: {correctAnswers}/4\n" +
-                               $"Precisión: {accuracy:F0}%\n" +
-                               $"Puntuación final: {score}\n\n" +
-                               "Has aprendido las partes básicas del modelo atómico de Rutherford";
+                               $"Respuestas correctas: {correctAnswers}/4\n";
+
             }
         }
     }

@@ -96,21 +96,21 @@ public class GameController : MonoBehaviour
     {
         atomModel.SetActive(false);
         gameOverPanel.SetActive(true);
-        gameOverText.text = "❌ Perdiste por tocar la masa positiva.";
+        gameOverText.text = " Perdiste por tocar la masa positiva.";
     }
 
     void EndGame_TimeOut()
     {
         atomModel.SetActive(false);
         gameOverPanel.SetActive(true);
-        gameOverText.text = $"⏱ Tiempo agotado.\nRecolectaste {collected} electrones.\nTe faltaron {electrons.Count}.";
+        gameOverText.text = $" Tiempo agotado.\nRecolectaste {collected} electrones.\nTe faltaron {electrons.Count}.";
     }
 
     void EndGame_Win()
     {
         atomModel.SetActive(false);
         gameOverPanel.SetActive(true);
-        gameOverText.text = $"🎉 ¡Ganaste!\nTiempo: {timeElapsed:F1} segundos.";
+        gameOverText.text = $" ¡Ganaste!\nTiempo: {timeElapsed:F1} segundos.";
     }
 
     void UpdateUI()
