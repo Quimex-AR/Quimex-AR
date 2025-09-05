@@ -22,11 +22,17 @@ Al detectarla, la aplicación mostrará el <b>modelo atómico<b> correspondiente
 # animation:hand_swipe
 Esta figura RA es <b>interactuable<b>. Puedes girarla.
 
-+ [Siguiente] -> atomic_model_zoom
++ [Siguiente] -> atomic_model_zoom_out
 
-=== atomic_model_zoom ===
-# animation:hand_zoom
-Puedes hacerla más grande o pequeña con un gesto de zoom.
+=== atomic_model_zoom_out ===
+# animation:hand_zoom_out
+Puedes hacerla pequeña con un gesto de zoom.
+
++ [Siguiente] -> atomic_model_zoom_in
+
+=== atomic_model_zoom_in ===
+# animation:hand_zoom_in
+O hacerla mas grande.
 
 + [Siguiente] -> atomic_model_back_to_normal
 
@@ -67,7 +73,7 @@ La segunda placa activa el <b>minijuego del modelo RA<b>.
 + [Siguiente] -> end
 
 === end ===
-# animation:hand_salutation
+# animation:hand_adieu
 ¡Y eso es todo! Explora, toca, juega y diviértete aprendiendo sobre el fascinante mundo de los átomos.
 
 -> END
