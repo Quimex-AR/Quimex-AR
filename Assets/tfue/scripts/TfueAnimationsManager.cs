@@ -7,7 +7,7 @@ public class TfueAnimationsManager : MonoBehaviour
     public static TfueAnimationsManager Instance;
 
     [Header("Animators")]
-    [SerializeField] private Animator handAnimator;
+    [SerializeField] private HandAnimator handAnimator;
     [SerializeField] private AtomicModelAnimator atomicModelAnimator;
 
     [Header("Configurations")]
@@ -36,22 +36,123 @@ public class TfueAnimationsManager : MonoBehaviour
         atomicModelAnimator.AtomicModelHide();
         atomicModelAnimator.PlateAtomicModelNameHide();
         atomicModelAnimator.PlateGameHide();
-        // PlaySpinLoop();
-        // PlayScaleLoop(1f, 0.5f);
-        // PlayScaleLoop(1f, 3f);
+        atomicModelAnimator.CanvasInfoHide();
     }
 
     #region Animations
-    public void HandSalutation() { Debug.Log(nameof(HandSalutation)); }
-    public void ImageTargetShow() { Debug.Log(nameof(ImageTargetShow)); }
-    public void AtomicModelShow() { Debug.Log(nameof(AtomicModelShow)); }
-    public void HandSwipe() { Debug.Log(nameof(HandSwipe)); }
-    public void HandZoom() { Debug.Log(nameof(HandZoom)); }
-    public void AtomicModelBackToNormal() { Debug.Log(nameof(AtomicModelBackToNormal)); }
-    public void AtomicModelTooltips() { Debug.Log(nameof(AtomicModelTooltips)); }
-    public void AtomicModelTooltipsInformationShow() { Debug.Log(nameof(AtomicModelTooltipsInformationShow)); }
-    public void AtomicModelPlatesModelNameShow() { Debug.Log(nameof(AtomicModelPlatesModelNameShow)); }
-    public void AtomicModelPlatesGameShow() { Debug.Log(nameof(AtomicModelPlatesGameShow)); }
+    public void HandSalutation()
+    {
+        handAnimator.SetHandModelPosition(-0.04f, -2f, -6.09f);
+        handAnimator.SetHandModelRotation(-14.083f, 180.347f, -0.537f);
+        handAnimator.SetHandModelScale(0.1f, 0.1f, 0.1f);
+        handAnimator.Animator.SetTrigger("salutation");
+    }
+    public void ImageTargetShow()
+    {
+        handAnimator.Model.SetActive(false);
+        atomicModelAnimator.ImageTargetShow();
+    }
+    public void AtomicModelShow()
+    {
+        atomicModelAnimator.AtomicModelShow();
+
+        atomicModelAnimator.TooltipHide();
+        atomicModelAnimator.PlateAtomicModelNameHide();
+        atomicModelAnimator.PlateGameHide();
+        atomicModelAnimator.CanvasInfoHide();
+    }
+    public void HandSwipe()
+    {
+        handAnimator.Model.SetActive(true);
+        handAnimator.SetHandModelPosition(0.69f, -1.02f, -7.58f);
+        handAnimator.SetHandModelRotation(-13.57f, 169.803f, -14.981f);
+        handAnimator.SetHandModelScale(0.05f, 0.05f, 0.05f);
+        handAnimator.Animator.SetTrigger("swipe");
+        PlaySpinLoop();
+    }
+    public void HandZoomOut()
+    {
+        StopSpinLoop();
+        atomicModelAnimator.AtomicModel.transform.rotation = atomicModelAnimator.AtomicModelBaseRotation;
+
+        handAnimator.SetHandModelPosition(0.438f, -0.815f, -7.429f);
+        handAnimator.SetHandModelRotation(1.155f, 183.989f, -25.317f);
+        handAnimator.Animator.SetTrigger("zoom in");
+        PlayScaleLoop(1f, 0.5f);
+    }
+
+    public void HandZoomIn()
+    {
+        StopSpinLoop();
+        atomicModelAnimator.AtomicModel.transform.localScale = atomicModelAnimator.AtomicModelBaseLocalScale;
+
+        handAnimator.SetHandModelPosition(0.364f, -0.934f, -7.753f);
+        handAnimator.SetHandModelRotation(-13.57f, 144.381f, -14.981f);
+        handAnimator.Animator.SetTrigger("zoom out");
+        PlayScaleLoop(1f, 3f);
+    }
+    public void AtomicModelBackToNormal()
+    {
+        handAnimator.Model.SetActive(false);
+
+        StopScaleLoop();
+        atomicModelAnimator.AtomicModel.transform.localScale = new Vector3(3f, 3f, 3f);
+
+        StartLoopedAnimation(
+            () => atomicModelAnimator.ScaleAtomicModelCoroutine(3f, 1f),
+            timeBetweenAnimationLoops,
+            ref animationRoutine,
+            animationFlag,
+            () =>
+            {
+                atomicModelAnimator.AtomicModel.transform.localScale = new Vector3(3f, 3f, 3f);
+            }
+        );
+    }
+    public void AtomicModelTooltips()
+    {
+        StopScaleLoop();
+        atomicModelAnimator.AtomicModel.transform.localScale = atomicModelAnimator.AtomicModelBaseLocalScale;
+
+        atomicModelAnimator.TooltipShow();
+    }
+    public void AtomicModelTooltipsInformationShow()
+    {
+        handAnimator.Model.SetActive(true);
+        handAnimator.SetHandModelPosition(0.811f, -0.53f, -7.23f);
+        handAnimator.SetHandModelRotation(-17.176f, 143.661f, -12.267f);
+        handAnimator.SetHandModelScale(0.06f, 0.06f, 0.06f);
+
+        animationFlag.Value = true;
+        animationRoutine = StartCoroutine(PlayCanvasInfoShowLoop());
+    }
+    public void AtomicModelPlatesShow()
+    {
+        StopCanvasInfoShowLoop();
+
+        atomicModelAnimator.CanvasInfoHide();
+        atomicModelAnimator.PlateAtomicModelNameShow();
+        atomicModelAnimator.PlateGameShow();
+
+    }
+    public void AtomicModelPlatesModelNameShow()
+    {
+        atomicModelAnimator.PlateGameHide();
+    }
+    public void AtomicModelPlatesGameShow()
+    {
+        atomicModelAnimator.PlateAtomicModelNameHide();
+        atomicModelAnimator.PlateGameShow();
+    }
+    public void HandAdieu()
+    {
+        atomicModelAnimator.PlateAtomicModelNameShow();
+        handAnimator.Model.SetActive(true);
+        handAnimator.SetHandModelPosition(-0.04f, -1.214f, -7.919f);
+        handAnimator.SetHandModelRotation(-14.083f, 180.347f, -0.537f);
+        handAnimator.SetHandModelScale(0.05f, 0.05f, 0.05f);
+        handAnimator.Animator.SetTrigger("salutation");
+    }
     #endregion
 
     #region Animations Helpers 
@@ -106,6 +207,78 @@ public class TfueAnimationsManager : MonoBehaviour
         }
 
         atomicModelAnimator.AtomicModel.transform.localScale = atomicModelAnimator.AtomicModelBaseLocalScale;
+    }
+    public void StopCanvasInfoShowLoop()
+    {
+        animationFlag.Value = false;
+        if (animationRoutine != null)
+        {
+            StopCoroutine(animationRoutine);
+            animationRoutine = null;
+        }
+
+        if (handAnimator != null && handAnimator.Model != null)
+            handAnimator.Model.SetActive(false);
+        atomicModelAnimator.CanvasInfoHide();
+    }
+    private IEnumerator PlayCanvasInfoShowLoop()
+    {
+        if (handAnimator == null || atomicModelAnimator == null) yield break;
+
+        Animator handAnim = handAnimator.Animator;
+        GameObject handModel = handAnimator.Model;
+
+        if (handModel == null || handAnim == null) yield break;
+
+        while (animationFlag.Value)
+        {
+            handModel.SetActive(true);
+            handAnim.ResetTrigger("touch");
+            handAnim.SetTrigger("touch");
+
+            float clipLength = GetAnimationClipLength(handAnim, "touch", 1f);
+            float waitForTouch = clipLength * 1;
+            if (waitForTouch <= 0.01f) waitForTouch = 1f * 1;
+
+            yield return new WaitForSeconds(waitForTouch);
+
+            atomicModelAnimator.CanvasInfoShow();
+            handModel.SetActive(false);
+
+            yield return new WaitForSeconds(2.0f);
+
+            atomicModelAnimator.CanvasInfoHide();
+
+            if (timeBetweenAnimationLoops > 0f)
+                yield return new WaitForSeconds(timeBetweenAnimationLoops);
+        }
+
+        handModel.SetActive(false);
+        atomicModelAnimator.CanvasInfoHide();
+        animationRoutine = null;
+    }
+    private float GetAnimationClipLength(Animator animator, string clipName, float fallback)
+    {
+        if (animator == null || animator.runtimeAnimatorController == null)
+            return fallback;
+
+        var clips = animator.runtimeAnimatorController.animationClips;
+        if (clips == null || clips.Length == 0)
+            return fallback;
+
+        foreach (var c in clips)
+        {
+            if (string.Equals(c.name, clipName, StringComparison.OrdinalIgnoreCase))
+                return c.length;
+        }
+
+        foreach (var c in clips)
+        {
+            if (c.name.IndexOf(clipName, StringComparison.OrdinalIgnoreCase) >= 0)
+                return c.length;
+        }
+
+        return clips.Length > 0 ? clips[0].length : fallback;
     }
 
     /// Starts a looped animation coroutine that repeatedly executes a given animation as long as a flag remains true.

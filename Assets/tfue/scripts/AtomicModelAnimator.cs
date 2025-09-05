@@ -1,5 +1,4 @@
 using System.Collections;
-using Unity.VisualScripting;
 using UnityEngine;
 
 [System.Serializable]
@@ -10,6 +9,7 @@ public class AtomicModelAnimator
     [SerializeField] private GameObject tooltip;
     [SerializeField] private GameObject plateAtomicModelName;
     [SerializeField] private GameObject plateGame;
+    [SerializeField] private GameObject canvasInfo;
 
     private Quaternion atomicModelBaseRotation;
     private Vector3 atomicModelBaseLocalScale;
@@ -109,6 +109,22 @@ public class AtomicModelAnimator
         if (atomicModel != null)
         {
             atomicModel.SetActive(false);
+        }
+    }
+
+    public void CanvasInfoShow()
+    {
+        if (canvasInfo != null)
+        {
+            canvasInfo.SetActive(true);
+        }
+    }
+
+    public void CanvasInfoHide()
+    {
+        if (canvasInfo != null)
+        {
+            canvasInfo.SetActive(false);
         }
     }
 
