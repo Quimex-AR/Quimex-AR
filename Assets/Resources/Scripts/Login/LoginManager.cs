@@ -29,11 +29,18 @@ public class LoginManager : MonoBehaviour
         if (submitButton.button != null)
             submitButton.button.onClick.AddListener(OnSubmitForm);
 
-        // Cache input default sprite image
-        if (emailValidation.inputBackground != null)
-            emailValidation.defaultSprite = emailValidation.inputBackground.sprite;
-        if (passwordValidation.inputBackground != null)
-            passwordValidation.defaultSprite = passwordValidation.inputBackground.sprite;
+        // Cache input default sprite image and tint color
+        // if (emailValidation.inputBackground != null)
+        // {
+        //     emailValidation.defaultSprite = emailValidation.inputBackground.sprite;
+        //     emailValidation.defaultTint = emailValidation.inputBackground.color;
+        // }
+
+        // if (passwordValidation.inputBackground != null)
+        // {
+        //     passwordValidation.defaultSprite = passwordValidation.inputBackground.sprite;
+        //     passwordValidation.defaultTint = passwordValidation.inputBackground.color;
+        // }
 
         // Hide the Error text container
         if (emailValidation.errorText != null)
@@ -127,10 +134,11 @@ public class LoginManager : MonoBehaviour
         }
 
         // Change the Image source of the input form
-        if (rule.inputBackground != null)
-        {
-            rule.inputBackground.sprite = string.IsNullOrEmpty(message) ? rule.defaultSprite : rule.errorSprite;
-        }
+        // if (rule.inputBackground != null)
+        // {
+        //     rule.inputBackground.sprite = string.IsNullOrEmpty(message) ? rule.defaultSprite : rule.errorSprite;
+        //     rule.inputBackground.color = string.IsNullOrEmpty(message) ? rule.defaultTint : rule.errorTint;
+        // }
     }
 
     private IEnumerator HandleLogin(string email, string password)
