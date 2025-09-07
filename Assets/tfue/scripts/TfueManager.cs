@@ -5,6 +5,7 @@ using UnityEngine.EventSystems;
 using System.Linq;
 using System;
 using System.Reflection;
+using UnityEngine.SceneManagement;
 
 public class TfueManager : MonoBehaviour, IPointerClickHandler
 {
@@ -85,8 +86,17 @@ public class TfueManager : MonoBehaviour, IPointerClickHandler
         }
         else
         {
-            dialogueTMP.text = "";
-            Debug.Log("Story Ends");
+            PlayerPrefs.SetInt("IsTutorialComplete", 1);
+
+            ToastManager.Instance.ShowToast("Tutorial completado", 0.35f);
+
+            if (FadeCanvas.Instance != null)
+            {
+                StartCoroutine(FadeCanvas.Instance.FadeToBlack());
+            }
+
+            LoadingScreenController.targetScene = "Quimex AR";
+            SceneManager.LoadScene("Loading Scene");
         }
     }
 }

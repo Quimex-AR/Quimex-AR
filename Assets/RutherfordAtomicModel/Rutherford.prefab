@@ -1162,18 +1162,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44e2ee3a751d04be18a97ca9fd05d344, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  title: Modelo de Bohr
-  body: "El modelo at\xF3mico de Bohr, propuesto en 1913 por Niels Bohr, represent\xF3
-    un gran avance en la comprensi\xF3n del \xE1tomo. A diferencia de los modelos
-    anteriores, plante\xF3 que los electrones giran alrededor del n\xFAcleo en \xF3rbitas
-    fijas o niveles de energ\xEDa. Cada nivel puede contener un n\xFAmero limitado
-    de electrones, y estos solo pueden saltar entre niveles absorbiendo o emitiendo
-    energ\xEDa en forma de luz. Este modelo explic\xF3 con \xE9xito fen\xF3menos
-    como las l\xEDneas espectrales del hidr\xF3geno y marc\xF3 un paso clave hacia
-    la f\xEDsica cu\xE1ntica moderna."
+  title: 
+  body: 
   raycastMask:
     serializedVersion: 2
     m_Bits: 4294967295
+  isSceneTrigger: 1
+  sceneName: RutherfordGame
 --- !u!1 &2886685805145167472
 GameObject:
   m_ObjectHideFlags: 0
@@ -1317,6 +1312,8 @@ MonoBehaviour:
   raycastMask:
     serializedVersion: 2
     m_Bits: 4294967295
+  isSceneTrigger: 0
+  sceneName: 
 --- !u!1 &2902893170846324991
 GameObject:
   m_ObjectHideFlags: 0
@@ -2985,6 +2982,8 @@ MonoBehaviour:
   raycastMask:
     serializedVersion: 2
     m_Bits: 4294967295
+  isSceneTrigger: 0
+  sceneName: 
 --- !u!1 &6006064916872054668
 GameObject:
   m_ObjectHideFlags: 0
@@ -3674,6 +3673,8 @@ MonoBehaviour:
   raycastMask:
     serializedVersion: 2
     m_Bits: 4294967295
+  isSceneTrigger: 0
+  sceneName: 
 --- !u!1 &6852133509299785607
 GameObject:
   m_ObjectHideFlags: 0
