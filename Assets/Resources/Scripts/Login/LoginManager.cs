@@ -19,6 +19,27 @@ public class LoginManager : MonoBehaviour
         if (FadeCanvas.Instance != null)
             FadeCanvas.Instance.Hide();
 
+        if (PlayerPrefs.GetInt("IsLoggedIn", 0) == 1)
+        {
+            ToastManager.Instance.ShowToast("Bienvenido de vuelta", 0.35f);
+
+            if (FadeCanvas.Instance != null)
+            {
+                StartCoroutine(FadeCanvas.Instance.FadeToBlack());
+            }
+
+            if (PlayerPrefs.GetInt("IsTutorialComplete", 0) == 1)
+            {
+                LoadingScreenController.targetScene = "Quimex AR";
+            }
+            else
+            {
+                LoadingScreenController.targetScene = "TFUE";
+            }
+
+            SceneManager.LoadScene("Loading Scene");
+        }
+
         loginService = new FirebaseLoginService();
 
         // Susbscribe to events from the form
@@ -152,6 +173,8 @@ public class LoginManager : MonoBehaviour
         submitButton.buttonText.text = "Iniciar Sesion";
         if (loginTask.Result.success)
         {
+            PlayerPrefs.SetInt("IsLoggedIn", 1);
+
             ToastManager.Instance.ShowToast(loginTask.Result.message, 0.35f);
 
             if (FadeCanvas.Instance != null)
@@ -159,7 +182,15 @@ public class LoginManager : MonoBehaviour
                 StartCoroutine(FadeCanvas.Instance.FadeToBlack());
             }
 
-            LoadingScreenController.targetScene = "Quimex AR";
+            if (PlayerPrefs.GetInt("IsTutorialComplete", 0) == 1)
+            {
+                LoadingScreenController.targetScene = "Quimex AR";
+            }
+            else
+            {
+                LoadingScreenController.targetScene = "TFUE";
+            }
+
             SceneManager.LoadScene("Loading Scene");
         }
         else

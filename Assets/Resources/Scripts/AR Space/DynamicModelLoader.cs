@@ -95,6 +95,8 @@ public class DynamicModelLoader : MonoBehaviour
             observer.OnTargetStatusChanged -= OnTargetStatusChanged;
         }
 
+        DestroyModel();
+
         if (Instance == this)
         {
             Instance = null;
@@ -205,7 +207,7 @@ public class DynamicModelLoader : MonoBehaviour
     /// </summary>
     private bool ShouldSpawn(string targetName, TargetStatus status)
     {
-        if (status.Status == Status.TRACKED && status.StatusInfo == StatusInfo.NORMAL)
+        if ((status.Status == Status.TRACKED || status.Status == Status.EXTENDED_TRACKED) && status.StatusInfo == StatusInfo.NORMAL)
         {
             return !isAnyModelActive && spawnedInstance == null && targetPrefabMap.ContainsKey(targetName);
         }
@@ -222,11 +224,12 @@ public class DynamicModelLoader : MonoBehaviour
 
         if (StickyMode)
         {
-            return status.Status == Status.TRACKED && status.StatusInfo == StatusInfo.NORMAL && targetName != currentTarget;
+            return (status.Status == Status.TRACKED || status.Status == Status.EXTENDED_TRACKED) && status.StatusInfo == StatusInfo.NORMAL && targetName != currentTarget;
         }
         else
         {
-            return status.Status == Status.NO_POSE || status.Status == Status.EXTENDED_TRACKED;
+            return status.Status == Status.NO_POSE;
+            // return status.Status == Status.NO_POSE || status.Status == Status.EXTENDED_TRACKED;
         }
     }
 
