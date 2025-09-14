@@ -4,7 +4,7 @@ public class GameplayHint : MonoBehaviour
 {
     void Start()
     {
-        DisableGameplayHint();
+        EnableGameplayHint(); // Cambiado: ahora se muestra al iniciar
     }
 
     public void EnableGameplayHint()
