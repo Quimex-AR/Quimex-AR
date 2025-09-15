@@ -18,12 +18,16 @@ public class GameController : MonoBehaviour
     [Header("Game Over Panel")]
     public GameObject gameOverPanel;
     public TextMeshProUGUI gameOverText;
+    
+    [Header("Instructions Panel")]
+    public GameObject instructionsPanel; // Referencia al panel de instrucciones
 
     private List<GameObject> electrons = new List<GameObject>();
     private int collected = 0;
     private float timer;
-    private bool gameRunning = true;
+    private bool gameRunning = false; // Cambiado: empezar pausado
     private float timeElapsed = 0f;
+    private bool instructionsActive = true; // Nuevo: controlar estado de instrucciones
 
     void Start()
     {
@@ -31,7 +35,11 @@ public class GameController : MonoBehaviour
         timeElapsed = 0f;
 
         gameOverPanel.SetActive(false);
-        atomModel.SetActive(true);
+        
+        // Al inicio SIEMPRE ocultar el modelo hasta que se cierren las instrucciones
+        atomModel.SetActive(false);
+        instructionsActive = true;
+        gameRunning = false;
 
         foreach (Transform child in atomModel.transform)
         {
@@ -64,6 +72,33 @@ public class GameController : MonoBehaviour
             }
 
             UpdateUI();
+        }
+    }
+
+    public void StartGame()
+    {
+        atomModel.SetActive(true);
+        gameRunning = true;
+        instructionsActive = false;
+    }
+
+    public void ShowInstructions()
+    {
+        if (instructionsPanel != null)
+        {
+            instructionsPanel.SetActive(true);
+            atomModel.SetActive(false);
+            gameRunning = false;
+            instructionsActive = true;
+        }
+    }
+
+    public void HideInstructions()
+    {
+        if (instructionsPanel != null)
+        {
+            instructionsPanel.SetActive(false);
+            StartGame();
         }
     }
 
@@ -135,6 +170,4 @@ public class GameController : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
         atomModel.SetActive(true);
     }
-
-
 }
